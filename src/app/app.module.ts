@@ -7,12 +7,16 @@ import { PlayersComponent } from './players/players.component';
 import { PlayerAddComponent } from './player-add/player-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { PlayerEditComponent } from './player-edit/player-edit.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayersComponent,
-    PlayerAddComponent
+    PlayerAddComponent,
+    PlayerEditComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
