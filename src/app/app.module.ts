@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PlayersComponent } from './players/players.component';
+import { PlayerAddComponent } from './player-add/player-add.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { PlayerEditComponent } from './player-edit/player-edit.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 import { AuthenticationComponent } from './authentication/authentication.component';
@@ -10,7 +16,11 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 @NgModule({
   declarations: [
     AppComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    PlayersComponent,
+    PlayerAddComponent,
+    PlayerEditComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +33,9 @@ import { AuthenticationComponent } from './authentication/authentication.compone
       storageBucket: "",
       messagingSenderId: "935607959094",
       appId: "1:935607959094:web:d1d9ecda2c6d4e7489e297"
-    })
+    }),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

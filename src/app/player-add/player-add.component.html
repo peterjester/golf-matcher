@@ -1,0 +1,99 @@
+<form [formGroup]="angForm" (ngSubmit)="onSubmit()">       
+    <div>
+        <label>
+            First Name:
+            <!-- <input type="text" formControlName="firstName" required> -->
+            <input type="text" id="firstName" class="form-control" formControlName="firstName" required>
+        </label>    
+        <div *ngIf="angForm.controls['firstName'].invalid && (angForm.controls['firstName'].dirty || angForm.controls['firstName'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['firstName'].errors.required">
+                    First name is required.
+                </div>
+        </div>
+    </div>
+    <div>
+        <label>
+            Last Name:
+            <input type="text" id="lastName" formControlName="lastName" required>
+        </label>
+        <div *ngIf="angForm.controls['lastName'].invalid && (angForm.controls['lastName'].dirty || angForm.controls['lastName'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['lastName'].errors.required">
+                    Last name is required.
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>
+            Nickname: 
+            <input id="nickname" type="text" formControlName="nickname">
+        </label>
+    </div>
+    <div>
+        <label>
+            Email:
+            <input id="email" type="text" formControlName="email" required>
+        </label>
+        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['email'].errors.required">
+                        Email is required.
+                </div>
+        </div>
+    </div>
+    <div>
+        <label>
+            Phone:
+            <input id="phone" type="text" formControlName="phone" minlength="7">
+        </label>
+        <div *ngIf="angForm.controls['phone'].invalid && (angForm.controls['phone'].dirty || angForm.controls['phone'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['phone'].errors.required">
+                        Phone is required.
+                </div>
+        </div>
+        <!-- <div *ngIf="angForm.controls['phone'].errors.minlength && angForm.controls['phone'].touched" class="alert alert-danger">
+            Phone number must be 7 digits
+        </div> -->
+        <!-- <div *ngIf="(angForm.controls['phone'].dirty || angForm.controls['phone'].touched) && angForm.controls['phone'].errors.minlength" class="alert alert-danger">
+            Phone number must be 7 digits
+        </div> -->
+    </div> 
+    <div>
+        <label>
+            Age:
+            <input id="age" type="number" formControlName="age">
+        </label>
+        <div *ngIf="angForm.controls['age'].invalid && (angForm.controls['age'].dirty || angForm.controls['age'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['age'].errors.required">
+                Age is required.
+            </div>
+        </div>
+        <!-- <div *ngIf="(angForm.controls['age'].dirty || 
+                        angForm.controls['age'].touched) && 
+                        angForm.controls['age'].errors.minlength" 
+                        class="alert alert-danger">
+            Age must be two digits
+        </div> -->
+    </div>
+    <div>
+        <label>
+            Handicap:
+            <input id="handicap" type="number" formControlName="handicap">
+        </label>
+        <div *ngIf="angForm.controls['handicap'].invalid && (angForm.controls['handicap'].dirty || angForm.controls['handicap'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['handicap'].errors.required">
+                    Handicap is required.
+                </div>
+            </div>
+        </div>
+    <div>
+        <label>
+            League:
+            <input id="league" type="text" formControlName="league">
+        </label>
+        <div *ngIf="angForm.controls['league'].invalid && (angForm.controls['league'].dirty || angForm.controls['league'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['league'].errors.required">
+                    League is required.
+                </div>
+        </div>
+    </div>
+    <button type="submit" [disabled]="!angForm.valid">Submit</button>
+</form>

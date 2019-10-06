@@ -1,0 +1,40 @@
+<div *ngIf="player">
+    <br>
+    <h2>EDIT: {{player.name}}</h2>
+    <div><span>Id: </span>{{player.id}}</div>
+    <div>
+        <label>Name:
+            <input [(ngModel)]="player.name" placeholder="name"/>
+        </label>
+    </div>
+    <div>
+        <label>Nickname:
+            <input [(ngModel)]="player.nickname" placeholder="nickname"/>
+        </label>
+    </div>
+    <div>
+        <label>Email:
+            <input [(ngModel)]="player.email" placeholder="email"/>
+        </label>
+    </div>
+    <div>
+        <label>Phone:
+            <input [(ngModel)]="player.phone" placeholder="phone"/>
+        </label>    
+    </div>
+    <div>
+        <label>Age:
+            <input [(ngModel)]="player.age" placeholder="age"/>
+        </label>
+    </div>
+    <div> 
+        <label>Handicap:
+            <input [(ngModel)]="player.handicap" placeholder="handicap"/>
+        </label>
+    </div>
+    <div> 
+        <label>League:
+            <input [(ngModel)]="player.league" placeholder="league"/>
+        </label>
+    </div>
+</div>
