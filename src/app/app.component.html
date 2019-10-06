@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,6 +16,25 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
+
+<ng-sidebar-container style="height: 45vh;">
+
+  <!-- Page content -->
+  <!-- A sidebar -->
+  <ng-sidebar [(opened)]="_opened">
+      <h1><a routerLink="/dashboard" class="router-link">Dashboard</a></h1>
+      <h1><a routerLink="/players" class="router-link">Players</a></h1>
+      <h1><a routerLink="/teams" class="router-link">Teams</a></h1>
+      <h1><a routerLink="/handicaps" class="router-link">Handicaps</a></h1>
+      <h1><a routerLink="/schedule" class="router-link">Schedule</a></h1>
+      <br>
+    </ng-sidebar>
+  <div ng-sidebar-content>
+      <div align="right">
+              <button (click)="_toggleSidebar()">Sidebar</button>
+      </div>
+  </div>
+</ng-sidebar-container>
 <router-outlet></router-outlet>
