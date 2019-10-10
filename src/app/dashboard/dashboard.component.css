@@ -32,8 +32,8 @@
     padding: 20px;
     text-align: center;
     color: #eee;
-    max-height: 120px;
-    min-width: 120px;
+    max-height: 80px;
+    min-width: 40px;
     background-color: rgb(13,85,7);
     border-radius: 2px;
   }

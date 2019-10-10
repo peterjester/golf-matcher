@@ -18,17 +18,17 @@
   </li>
 </ul> -->
 
+<h1 class="header">Golf-Matcher</h1>
 
-<ng-sidebar-container style="height: 45vh;">
+<ng-sidebar-container style="height: 30vh;">
 
-  <!-- Page content -->
-  <!-- A sidebar -->
   <ng-sidebar [(opened)]="_opened">
-      <h1><a routerLink="/dashboard" class="router-link">Dashboard</a></h1>
-      <h1><a routerLink="/players" class="router-link">Players</a></h1>
-      <h1><a routerLink="/teams" class="router-link">Teams</a></h1>
-      <h1><a routerLink="/handicaps" class="router-link">Handicaps</a></h1>
-      <h1><a routerLink="/schedule" class="router-link">Schedule</a></h1>
+      <h3><a routerLink="/dashboard" class="router-link">Dashboard</a></h3>
+      <h3><a routerLink="/players" class="router-link">Players</a></h3>
+      <h3><a routerLink="/addplayer" class="router-link">Add Player</a></h3>
+      <h3><a routerLink="/teams" class="router-link">Teams</a></h3>
+      <h3><a routerLink="/handicaps" class="router-link">Handicaps</a></h3>
+      <h3><a routerLink="/schedule" class="router-link">Schedule</a></h3>
       <br>
     </ng-sidebar>
   <div ng-sidebar-content>
@@ -38,3 +38,6 @@
   </div>
 </ng-sidebar-container>
 <router-outlet></router-outlet>
+
+<app-authentication></app-authentication>
+
