@@ -13,6 +13,7 @@ import { SidebarModule } from 'ng-sidebar';
 
 import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { TeamsComponent } from './teams/teams.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     PlayersComponent,
     PlayerAddComponent,
     PlayerEditComponent,
-    DashboardComponent
+    DashboardComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,
