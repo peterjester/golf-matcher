@@ -2,8 +2,10 @@
 <div class="container">
   <div class="card mx-auto col-xl-6 col-lg-8 col-sm-10">
     <div class="card-body">
-      <ngb-auth-firebaseui (onSuccess)="printUser($event)"
-                           (onError)="printError($event)">
+      <ngb-auth-firebaseui 
+          [providers]="['google', 'facebook']"
+          (onSuccess)="printUser($event)"
+          (onError)="printError($event)">
       </ngb-auth-firebaseui>
     </div>
   </div>

@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     DashboardComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     NgbAuthFirebaseUIModule.forRoot({
