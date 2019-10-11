@@ -10,9 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    NgbAuthFirebaseUIModule.forRoot({
+    NgxAuthFirebaseUIModule.forRoot({
       apiKey: "AIzaSyBdDGhasKTCRmyGJe79iY-V5ZH-cnL-kBg",
       authDomain: "golf-matcher-cf449.firebaseapp.com",
       databaseURL: "https://golf-matcher-cf449.firebaseio.com",
