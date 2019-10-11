@@ -1,9 +1,10 @@
+<br>
 <form [formGroup]="angForm" (ngSubmit)="onSubmit()">       
     <div>
         <label>
             First Name:
-            <!-- <input type="text" formControlName="firstName" required> -->
-            <input type="text" id="firstName" class="form-control" formControlName="firstName" required>
+            <input type="text" formControlName="firstName" required>
+            <!-- <input type="text" id="firstName" class="form-control" formControlName="firstName" required> -->
         </label>    
         <div *ngIf="angForm.controls['firstName'].invalid && (angForm.controls['firstName'].dirty || angForm.controls['firstName'].touched)" class="alert alert-danger">
                 <div *ngIf="angForm.controls['firstName'].errors.required">

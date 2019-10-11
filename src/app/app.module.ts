@@ -9,9 +9,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SidebarModule } from 'ng-sidebar';
 
 import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { TeamsComponent } from './teams/teams.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     PlayersComponent,
     PlayerAddComponent,
     PlayerEditComponent,
-    DashboardComponent
+    DashboardComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,9 @@ import { AuthenticationComponent } from './authentication/authentication.compone
       appId: "1:935607959094:web:d1d9ecda2c6d4e7489e297"
     }),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
