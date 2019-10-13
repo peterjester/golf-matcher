@@ -1,0 +1,39 @@
+.header {
+  text-align: center;
+  color: rgb(13,85,7);
+  font: bold;
+}
+button {
+  /* background: #0066A2;    */
+  background: rgb(13,85,7); 
+  padding: 5px 15px;  
+  color: white;
+  border-style: outset;
+  border-color: rgb(0,0,0);
+  height: 40px;
+  width: 100px;
+  font: bold 15px arial, sans-serif;
+  text-shadow:none;
+}
+
+button:disabled,
+button[disabled]{
+border: 1px solid #999999;
+background-color: #cccccc;
+color: #666666;
+}
+/* Add application styles & imports to this file! */
+.ng-sidebar {
+  background: red;
+  width: 13rem;
+}
+
+.ng-sidebar--right {
+  color: red !important;
+  background: antiquewhite;
+  width: 12rem;
+}
+
+.router-link {font: bold; padding: 5px;text-decoration: none;}
+.router-link:visited {font: bold; color: #8105a7;}
+.router-link.router-link-active {color: white; background-color: #52b9e9; text-decoration: none;}

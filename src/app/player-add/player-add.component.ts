@@ -5,6 +5,7 @@ import {Players} from '../../mock-players';
 import { PlayerService } from '../player.service';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-player-add',
@@ -36,7 +37,8 @@ export class PlayerAddComponent {
     //   league: ['']
     // })
   constructor(private playerService : PlayerService,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private router: Router) {
                 this.createForm();
   }
 
@@ -72,5 +74,7 @@ export class PlayerAddComponent {
                     age:  this.angForm.value.age,
                     handicap: this.angForm.value.handicap,
                     league: this.angForm.value.league});
+    
+    this.router.navigateByUrl('/players');
   }
 }
