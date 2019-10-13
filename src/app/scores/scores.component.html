@@ -1,0 +1,136 @@
+<h1>Scores</h1>
+<!-- <ul class="players"> -->
+<!-- <li  (click)="onSelect(player)" [class.selected]="player === selectedPlayer"> -->
+<!-- <div *ngFor="let player of players" class="parent">
+    <head>
+        <div class="parent">
+            <div class="player">Name</div>
+            <div class="metadata">
+                <div class="hole">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+
+                </div>
+            </div>
+        </div>
+    </head>
+    <div class="player"> <span class="badge">{{player.id}}</span> {{player.name}} <span>({{player.nickname}})</span>
+    </div>
+    <div class="scores"> -->
+<!-- todo in a loop -->
+<!-- 
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+        <div><input type="text" placeholder="-1" /></div>
+    </div>
+</div> -->
+
+<div class="long-title">
+    <h3>Countries Population and GDP Structure</h3>
+</div>
+<!-- // rowTemplate="rowTemplateName" -->
+<dx-data-grid id="gridContainer" [dataSource]="players" [columnAutoWidth]="true" [showBorders]="true"
+    [allowColumnReordering]="true" >
+    <dxo-editing mode="batch" [allowUpdating]="true" [selectTextOnEditStart]="selectTextOnEditStart"
+        [startEditAction]="startEditAction">
+    </dxo-editing>
+    <!-- <dxi-column dataField="name" caption="Player">
+    </dxi-column>
+    <dxi-column caption="Photo" [width]="100" [allowFiltering]="false" [allowSorting]="false"></dxi-column>
+    <dxi-column dataField="Prefix" [width]="70" caption="Title"></dxi-column>
+    <dxi-column dataField="FirstName"></dxi-column>
+    <dxi-column dataField="LastName"></dxi-column>
+    <dxi-column dataField="Position"></dxi-column>
+    <dxi-column dataField="BirthDate" dataType="date"></dxi-column>
+    <dxi-column dataField="HireDate" dataType="date"></dxi-column>-->
+    <dxi-column caption="Player">
+        <dxi-column dataField="name" caption="Name"></dxi-column>
+        <dxi-column dataField="handicap" caption="Handicap"></dxi-column>
+        <dxi-column dataField="email" caption="Email"></dxi-column>
+    </dxi-column>
+    <dxi-column caption="HOLES" dataField="holes" dataType="array" headerCellTemplate="headerTemplate">
+        <!-- <dxi-column *ngFor='let hole of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]' caption={{hole}} >
+        </dxi-column> -->
+    </dxi-column>
+    <!-- <tbody class="employee dx-row" *dxTemplate="let player of 'rowTemplateName'">
+        <tr class="main-row">
+            <td><a class="navbar-brand" href="players">{{player.data.name}}</a></td>
+
+            <td>{{player.data.handicap}}</td>
+            <td>{{player.data.email}}</td>
+            <td *ngFor="let hole of player.data.holes">{{hole}}</td>
+        </tr>
+
+    </tbody>-->
+
+    <!-- </dxi-column> -->
+    <!-- <dxi-column caption="Nominal GDP">
+            <dxi-column
+                caption="Total, mln $"
+                dataField="GDP_Total"
+                format="fixedPoint"
+                sortOrder="desc">
+           </dxi-column>
+            <dxi-column caption="By Sector">
+                <dxi-column
+                    caption="Agriculture"
+                    [width]="95"
+                    dataField="GDP_Agriculture">
+                    <dxo-format
+                        type="percent"
+                        [precision]="1">
+                    </dxo-format>
+                </dxi-column>
+                <dxi-column
+                    caption="Industry"
+                    [width]="80"
+                    dataField="GDP_Industry">
+                    <dxo-format
+                        type="percent"
+                        [precision]="1">
+                    </dxo-format>
+                </dxi-column>
+                <dxi-column
+                    caption="Services"
+                    [width]="85"
+                    dataField="GDP_Services">
+                    <dxo-format
+                        type="percent"
+                        [precision]="1">
+                    </dxo-format>
+                </dxi-column>
+            </dxi-column>
+        </dxi-column> -->
+    <div *dxTemplate="let data of 'headerTemplate'">
+        <div *ngFor="let val of data.data">{{val}}</div>
+    </div>
+</dx-data-grid>

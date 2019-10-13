@@ -25,6 +25,7 @@ export class PlayerService {
                     phone: player.phone,
                     age:  player.age,
                     handicap: player.handicap,
-                    league: player.league});
+                    league: player.league,
+                    holes: player.holes});
   }
 }

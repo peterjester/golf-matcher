@@ -7,5 +7,4 @@ export class Player {
     age: number;
     handicap: number;
     league: string;
-    holes: number[];
 }

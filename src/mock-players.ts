@@ -10,7 +10,8 @@ export const Players: Player[] = [
         phone: '1234567890',
         age: 39,
         handicap: 14,
-        league: 'one'
+        league: 'one',
+        holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
     },
     { 
         id: 2, 
@@ -20,7 +21,8 @@ export const Players: Player[] = [
         phone: '1234567890',
         age: 25,
         handicap: 18,
-        league: 'one'
+        league: 'one',
+        holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
     },
     { 
         id: 3,
@@ -30,7 +32,8 @@ export const Players: Player[] = [
         phone: '2345678901',
         age: 25,
         handicap: 4,
-        league: 'one'
+        league: 'one',
+        holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
     },
     {
         id: 4,
@@ -40,6 +43,7 @@ export const Players: Player[] = [
         phone: '3456789012',
         age: 25,
         handicap: 15,
-        league: 'one'
+        league: 'one',
+        holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
     }
 ];
