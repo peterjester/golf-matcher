@@ -15,6 +15,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { TeamsComponent } from './teams/teams.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TeamsComponent } from './teams/teams.component';
     PlayerAddComponent,
     PlayerEditComponent,
     DashboardComponent,
-    TeamsComponent
+    TeamsComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserAnimationsModule,
