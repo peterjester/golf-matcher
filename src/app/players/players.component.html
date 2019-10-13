@@ -1,5 +1,5 @@
 <br>
-<h2>Players</h2>
+<h2 class="header">Players</h2>
 <ul class="players">
     <li 
         *ngFor="let player of players" 
@@ -9,7 +9,7 @@
         <!-- <div *ngIf="selectedPlayer && selectedPlayer === player"> -->
         </li>
         <div *ngIf="selectedPlayer">
-                <button type="submit" (click)="onDelete()" [disabled]="!selectedPlayer">Delete {{selectedPlayer.nickname}}</button>
+                <button type="submit" (click)="onDelete()" [disabled]="!selectedPlayer">Delete</button>
         </div>
         </ul>
 

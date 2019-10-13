@@ -1,4 +1,9 @@
 /* HeroesComponent's private CSS styles */
+.header {
+  /* text-align: center; */
+  color: rgb(13,85,7);
+  font: bold;
+}
 .players {
   margin: 0 0 2em 0;
   list-style-type: none;
