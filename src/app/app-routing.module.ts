@@ -9,7 +9,7 @@ import { TeamsComponent } from './teams/teams.component';
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'players', component: PlayersComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'edit/:id', component: PlayerEditComponent },
   { path: 'addplayer', component: PlayerAddComponent},
   { path: 'teams', component: TeamsComponent}

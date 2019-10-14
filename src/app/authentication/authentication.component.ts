@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-authentication',
   templateUrl: './authentication.component.html',
@@ -9,13 +11,17 @@ import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 })
 export class AuthenticationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   printUser(event) {
     console.log('on success: ', event);
+    if (event.emailVerified) {
+      console.log('lets go somewhere else')
+      this.router.navigate(['/dashboard'])
+    }
   }
 
   printError(event) {
