@@ -24,10 +24,12 @@
     "@angular/router": "~8.2.9",
     "@firebaseui/ng-bootstrap": "^0.4.1",
     "@ng-bootstrap/ng-bootstrap": "^5.1.1",
+    "angularfire2": "^5.2.1",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "firebase": "^6.6.2",
     "font-awesome": "^4.7.0",
+    "ng-sidebar": "^9.1.1",
     "rxjs": "~6.5.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
