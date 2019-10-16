@@ -1,0 +1,17 @@
+<br>
+<!-- <div style="background:url('./assets/golf-image.jpg') no-repeat 0px 0px;"> -->
+<div>
+<h2 class="header">Teams</h2>
+<ul class="teams">
+    <li 
+        *ngFor="let team of teams" 
+        (click)="onSelect(team)" 
+        [class.selected]="team === selectedTeam">      
+            <span class="badge">{{team.id}}</span> {{team.name}} <span>({{team.league}})</span>
+        </li>
+        <div *ngIf="selectedTeam">
+                <button type="submit" (click)="onDelete()" [disabled]="!selectedTeam">Delete</button>
+        </div>
+</ul>
+</div>
+

@@ -3,7 +3,7 @@ import {Player} from './app/players/player';
 
 export const Players: Player[] = [
     { 
-        id: 1, 
+        id: "1", 
         name: 'William Ganley', 
         nickname: "Bill", 
         email: 'wag945@psu.edu',
@@ -14,7 +14,7 @@ export const Players: Player[] = [
         holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
     },
     { 
-        id: 2, 
+        id: "2", 
         name: 'Peter Jester', 
         nickname: "Pete", 
         email: 'peter.jester@gmail.com',
@@ -25,7 +25,7 @@ export const Players: Player[] = [
         holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
     },
     { 
-        id: 3,
+        id: "3",
         name: 'Craig Roland',
         nickname: 'Craig',
         email: 'craig.roland@gmail.com',
@@ -36,7 +36,7 @@ export const Players: Player[] = [
         holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
     },
     {
-        id: 4,
+        id: "4",
         name: 'Daniel Castellucci',
         nickname: 'Dan',
         email: 'dan.castellucci@gmail.com',

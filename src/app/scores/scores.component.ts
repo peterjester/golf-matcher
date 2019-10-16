@@ -47,7 +47,7 @@
 import { NgModule, Component, enableProdMode, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { Player } from './scores';
+import { Player } from '../players/player';
 import { PlayerService } from '../player.service';
 import { DxDataGridModule, DxTemplateModule } from 'devextreme-angular';
 import { Service, Employee} from '../app.service';

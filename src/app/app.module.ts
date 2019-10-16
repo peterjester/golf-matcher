@@ -1,3 +1,4 @@
+import { environment } from '../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,6 +16,12 @@ import { DxDataGridModule, DxTemplateModule } from 'devextreme-angular';
 import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { RouterModule } from '@angular/router';
+import { SidebarModule } from 'ng-sidebar';
+
+import { TeamsComponent } from './teams/teams.component';
+
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
 
 @NgModule({
   declarations: [
@@ -24,7 +31,8 @@ import { RouterModule } from '@angular/router';
     PlayerAddComponent,
     PlayerEditComponent,
     DashboardComponent,
-    ScoresComponent
+    ScoresComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,17 +44,13 @@ import { RouterModule } from '@angular/router';
       { path: 'test', component: PlayerEditComponent },
       { path: 'players', component: PlayersComponent },
     ]),
-    NgbAuthFirebaseUIModule.forRoot({
-      apiKey: "AIzaSyBdDGhasKTCRmyGJe79iY-V5ZH-cnL-kBg",
-      authDomain: "golf-matcher-cf449.firebaseapp.com",
-      databaseURL: "https://golf-matcher-cf449.firebaseio.com",
-      projectId: "golf-matcher-cf449",
-      storageBucket: "",
-      messagingSenderId: "935607959094",
-      appId: "1:935607959094:web:d1d9ecda2c6d4e7489e297"
-    }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    NgbAuthFirebaseUIModule.forRoot(environment.firebaseConfig),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

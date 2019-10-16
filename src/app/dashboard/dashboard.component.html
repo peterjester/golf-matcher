@@ -1,18 +1,21 @@
-<div class="navbar navbar-fixed-top">
+<!-- <div class="navbar navbar-fixed-top">
   <div class="container"> 
     <div class="navbar-header">
         <a class="navbar-brand" href="scores">Scores</a>
         <a class="navbar-brand" href="test">testing</a>
         <a class="navbar-brand" href="players">Players</a>
-    </div>  
+    </div>   -->
+
     <!-- <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <a class="navbar-brand" href="scores">scores</a>
         <a class="navbar-brand" href="test">testing</a>
       </ul>
     </div> -->
-  </div>
-</div>
+
+  <!-- </div>
+</div> -->
+
 <!-- <div class="grid grid-pad">
   <a *ngFor="let player of players" class="col-1-4"
     routerLink="/players">
@@ -21,3 +24,33 @@
     </div>
   </a>
 </div> -->
+
+<!-- <h3>Teams</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let team of teams" class="col-1-4"
+    routerLink="/teams">
+    <div class="module team">
+      <h4>{{team.name}}</h4>
+    </div>
+  </a>
+</div> -->
+
+<h3>Players</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let player of players" class="col-1-4"
+    routerLink="/players">
+    <div class="module player">
+      <h4>{{player.name}} ({{player.nickname}})</h4>
+    </div>
+  </a>
+</div>
+
+<h3>Teams</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let team of teams" class="col-1-4"
+    routerLink="/teams">
+    <div class="module team">
+      <h4>{{team.name}}</h4>
+    </div>
+  </a>
+</div>
