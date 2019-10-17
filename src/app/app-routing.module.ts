@@ -5,6 +5,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { PlayerEditComponent }  from './player-edit/player-edit.component';
 import { PlayerAddComponent } from './player-add/player-add.component';
 import { TeamsComponent } from './teams/teams.component';
+import { ScoresComponent } from './scores/Scores.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'edit/:id', component: PlayerEditComponent },
   { path: 'addplayer', component: PlayerAddComponent},
-  { path: 'teams', component: TeamsComponent}
+  { path: 'teams', component: TeamsComponent},
+  { path: 'scores', component: ScoresComponent}
 ];
 
 @NgModule({

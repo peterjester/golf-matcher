@@ -51,7 +51,8 @@ export class PlayerAddComponent {
       phone: ['',Validators.required],
       age: ['',Validators.required],
       handicap: ['',Validators.required],
-      league: ['',Validators.required]
+      league: ['',Validators.required],
+      holes: ['',Validators.required]
     })
   }
 
@@ -73,7 +74,8 @@ export class PlayerAddComponent {
                     phone: this.angForm.value.phone,
                     age:  this.angForm.value.age,
                     handicap: this.angForm.value.handicap,
-                    league: this.angForm.value.league});
+                    league: this.angForm.value.league,
+                    holes: this.angForm.value.holes});
     
     this.router.navigateByUrl('/players');
   }

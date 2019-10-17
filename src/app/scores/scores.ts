@@ -1,5 +1,5 @@
 export class Player {
-    id?: string;
+    id: string;
     name: string;
     nickname: string;
     email: string;
@@ -7,5 +7,4 @@ export class Player {
     age: number;
     handicap: number;
     league: string;
-    holes: number[];
 }
