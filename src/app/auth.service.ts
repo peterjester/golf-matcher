@@ -18,7 +18,7 @@ export class AuthService {
   loginSuccess(event) {
     let userData =  event.providerData[0];
     this.currentUser = userData;
-    this.router.navigate(['/appointments'])
+    this.router.navigate(['/dashboard'])
   }
 
   loginFailed(event) {

@@ -6,11 +6,12 @@ import { PlayerEditComponent }  from './player-edit/player-edit.component';
 import { PlayerAddComponent } from './player-add/player-add.component';
 import { TeamsComponent } from './teams/teams.component';
 import { ScoresComponent } from './scores/scores.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'players', component: PlayersComponent },
-  // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '',  component: AuthenticationComponent },
   { path: 'edit/:id', component: PlayerEditComponent },
   { path: 'addplayer', component: PlayerAddComponent},
   { path: 'teams', component: TeamsComponent},

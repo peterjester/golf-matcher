@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-authentication',
@@ -21,10 +20,7 @@ export class AuthenticationComponent implements OnInit {
 
   printUser(event) {
     console.log('on success: ', event);
-    if (event.emailVerified) {
-      console.log('lets go somewhere else')
-      this.router.navigate(['/dashboard'])
-    }
+    this.authService.loginSuccess(event);
   }
 
   printError(event) {

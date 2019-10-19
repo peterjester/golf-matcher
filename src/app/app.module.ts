@@ -35,7 +35,8 @@ import { AngularFireModule } from 'angularfire2';
     DashboardComponent,
     TeamsComponent,
     SidebarComponent,
-    TeamsComponent
+    TeamsComponent,
+    ScoresComponent
   ],
   imports: [
     BrowserAnimationsModule,
