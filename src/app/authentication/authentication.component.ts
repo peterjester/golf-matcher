@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-authentication',
   templateUrl: './authentication.component.html',
@@ -9,13 +12,15 @@ import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
 })
 export class AuthenticationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService = new AuthService(this.router);
   }
 
   printUser(event) {
     console.log('on success: ', event);
+    this.authService.loginSuccess(event);
   }
 
   printError(event) {
