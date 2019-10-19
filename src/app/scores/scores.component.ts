@@ -50,13 +50,12 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Player } from '../players/player';
 import { PlayerService } from '../player.service';
 import { DxDataGridModule, DxTemplateModule } from 'devextreme-angular';
-import { Service, Employee} from '../app.service';
 
 @Component({
   selector: 'app-scores',
   templateUrl: './scores.component.html',
   styleUrls: ['./scores.component.css'],
-  providers: [Service]
+  providers: []
 })
 // @Component({
 //     selector: 'app-scores',
