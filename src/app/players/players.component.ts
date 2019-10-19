@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { Player } from './player';
 // import { Players} from '../mock-players';
 import {Players} from '../../mock-players';
@@ -22,28 +22,44 @@ export class PlayersComponent implements OnInit {
   //   league: 'one'
   players : Player[];
 
-  constructor(private playerService : PlayerService) { }
+  @ViewChild('players', {static: false}) list: ElementRef;
 
-  getPlayers(): void {
-    this.playerService.getPlayers()
+  constructor(private playerService : PlayerService,
+              private renderer: Renderer2) { 
+
+      this.renderer.listen('window', 'click',(e:Event)=>{
+        console.log("players: got click event");
+        let elementId: string = (event.target as Element).id;
+        let className: string = (event.target as Element).className; 
+        console.log("players: elementId="+elementId);
+        console.log("players: className="+className);
+        if (className !== "selected")
+        {
+          this.selectedPlayer=null;
+        }
+      });
+  }
+       
+    getPlayers(): void {
+        this.playerService.getPlayers()
         .subscribe(players => this.players = players);
-  }  
-  selectedPlayer: Player;
+    }  
+    selectedPlayer: Player;
   
-  onSelect(player: Player): void {
-    this.selectedPlayer = player;
-    console.log('selected player: '+this.selectedPlayer.name);
-  }
-  ngOnInit() {
-    this.getPlayers();
-  }
+    onSelect(player: Player): void {
+      this.selectedPlayer = player;
+      console.log('selected player: '+this.selectedPlayer.name);
+    }
+    ngOnInit() {
+      this.getPlayers();
+    }
 
-  onDelete() {
-    console.log("players onDelete selectedPlayer:"+this.selectedPlayer.name);
-    for( var i = 0; i < this.players.length; i++){ 
-      if ( this.players[i] === this.selectedPlayer) {
-        this.players.splice(i, 1); 
+    onDelete() {
+      console.log("players onDelete selectedPlayer:"+this.selectedPlayer.name);
+      for( var i = 0; i < this.players.length; i++){ 
+        if ( this.players[i] === this.selectedPlayer) {
+          this.players.splice(i, 1); 
+        }
       }
-   }
-  }
+    }
 }
