@@ -66,6 +66,9 @@ import { DxDataGridModule, DxTemplateModule } from 'devextreme-angular';
 export class ScoresComponent implements OnInit {
     players: Player[];
 
+    selectTextOnEditStart;
+    startEditAction;
+
     // constructor(service: Service) {
     //     this.players = service.getCountries();
     // }

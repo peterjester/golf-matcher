@@ -18,13 +18,14 @@ export class AuthenticationComponent implements OnInit {
     this.authService = new AuthService(this.router);
   }
 
-  printUser(event) {
+  loginSuccess(event) {
     console.log('on success: ', event);
     this.authService.loginSuccess(event);
   }
 
-  printError(event) {
+  loginFailed(event) {
     console.error('on error: ', event);
+    this.authService.loginFailed(event);
   }
 
 }
