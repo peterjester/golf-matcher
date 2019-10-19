@@ -1,7 +1,7 @@
-import { User } from './user.model';
+// import { IUser } from './user.model';
 
-describe('User', () => {
-  it('should create an instance', () => {
-    expect(new User()).toBeTruthy();
-  });
-});
+// describe('IUser', () => {
+//   it('should create an instance', () => {
+//     expect(new IUser()).toBeTruthy();
+//   });
+// });
