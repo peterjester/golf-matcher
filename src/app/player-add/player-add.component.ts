@@ -51,7 +51,8 @@ export class PlayerAddComponent {
       phone: ['',Validators.required],
       age: ['',Validators.required],
       handicap: ['',Validators.required],
-      league: ['',Validators.required]
+      league: ['',Validators.required],
+      holes: ['',Validators.required]
     })
   }
 
@@ -66,14 +67,15 @@ export class PlayerAddComponent {
   //                   handicap: this.playerForm.value.handicap,
   //                   league: this.playerForm.value.league});
     this.playerService.addPlayer( {
-                    id: Players.length+1,
+                    // id: Players.length+1,
                     name: this.angForm.value.firstName+" "+this.angForm.value.lastName, 
                     nickname: this.angForm.value.nickname,
                     email: this.angForm.value.email,
                     phone: this.angForm.value.phone,
                     age:  this.angForm.value.age,
                     handicap: this.angForm.value.handicap,
-                    league: this.angForm.value.league});
+                    league: this.angForm.value.league,
+                    holes: this.angForm.value.holes});
     
     this.router.navigateByUrl('/players');
   }

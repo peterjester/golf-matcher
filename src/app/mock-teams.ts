@@ -8,14 +8,15 @@ export const Teams: Team[] = [
         league: 'One',
         players: [
             { 
-                id: 1, 
+                id: "1", 
                 name: 'William Ganley', 
                 nickname: "Bill", 
                 email: 'wag945@psu.edu',
                 phone: '1234567890',
                 age: 39,
                 handicap: 14,
-               league: 'one'
+                league: 'one',
+                holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
             }]
     },
     {
@@ -25,14 +26,15 @@ export const Teams: Team[] = [
         league: 'One',
         players: [
             { 
-                id: 2, 
+                id: "2", 
                 name: 'Peter Jester', 
                 nickname: "Pete", 
                 email: 'peter.jester@gmail.com',
                 phone: '1234567890',
                 age: 25,
                 handicap: 18,
-                league: 'one'
+                league: 'one',
+                holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
             }        
         ]
     },
