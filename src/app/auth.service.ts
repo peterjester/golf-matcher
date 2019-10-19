@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { IUser } from './user.model';
 
 
@@ -13,7 +12,6 @@ export class AuthService {
   constructor(private router: Router) {
 
   }
-
 
   loginSuccess(event) {
     let userData =  event.providerData[0];
