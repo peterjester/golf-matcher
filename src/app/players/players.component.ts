@@ -52,6 +52,10 @@ export class PlayersComponent implements OnInit {
     }
     ngOnInit() {
       this.getPlayers();
+      for (var i = 0; i < this.players.length; i++)
+      {
+        console.log("player "+this.players[i].id+" name: "+this.players[i].name);
+      }
     }
 
     onDelete() {

@@ -5,7 +5,7 @@
         *ngFor="let player of players" 
         (click)="onSelect(player)" 
         [class.selected]="player === selectedPlayer">      
-            <span class="badge">{{player.id}}</span> {{player.name}} <span>({{player.nickname}})</span>
+            <span class="badge">{{player.handicap}}</span> {{player.name}} <span>({{player.nickname}})</span>
         <!-- <div *ngIf="selectedPlayer && selectedPlayer === player"> -->
         </li>
         <div *ngIf="!selectedPlayer">
