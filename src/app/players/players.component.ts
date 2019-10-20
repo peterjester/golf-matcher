@@ -35,7 +35,11 @@ export class PlayersComponent implements OnInit {
        
     getPlayers(): void {
         this.playerService.getPlayers()
-        .subscribe(players => this.players = players);
+        .subscribe(players => {
+          console.log("players getPlayers subscribe returned");
+          this.players = players;
+          this.router.navigateByUrl('/players');
+        });
     }  
     selectedPlayer: Player;
   
