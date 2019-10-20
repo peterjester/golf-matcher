@@ -54,11 +54,13 @@ export class PlayersComponent implements OnInit {
 
     onDelete() {
       console.log("players onDelete selectedPlayer:"+this.selectedPlayer.name);
-      for( var i = 0; i < this.players.length; i++){ 
-        if ( this.players[i] === this.selectedPlayer) {
-          this.players.splice(i, 1); 
-        }
-      }
+      // for( var i = 0; i < this.players.length; i++){ 
+      //   if ( this.players[i] === this.selectedPlayer) {
+      //     this.players.splice(i, 1); 
+      //   }
+      // }
+
+      this.playerService.deletePlayer(this.selectedPlayer);
     }
 
     onAdd() {

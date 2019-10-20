@@ -17,7 +17,11 @@ export class PlayerService {
 
   constructor(private db: AngularFirestore) {
     this.playersCollection = this.db.collection('Players');
+  }
 
+  getPlayers(): Observable<Player[]> {
+    console.log("player.service getPlayers");
+    
     this.players = this.playersCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Player;
@@ -26,11 +30,7 @@ export class PlayerService {
       }))
     );
 
-    // this.players = this.playersCollection.valueChanges();
-  }
-
-  getPlayers(): Observable<Player[]> {
-    console.log("player.service getPlayers");
+    this.players.forEach(value => {console.debug(value)})
 
     return (this.players);
   }
