@@ -52,7 +52,7 @@ export class PlayerAddComponent {
       age: ['',Validators.required],
       handicap: ['',Validators.required],
       league: ['',Validators.required],
-      holes: ['',Validators.required]
+      holes: ['']
     })
   }
 

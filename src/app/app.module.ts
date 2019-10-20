@@ -24,6 +24,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
+import { TeamAddComponent } from './team-add/team-add.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AngularFireModule } from 'angularfire2';
     TeamsComponent,
     SidebarComponent,
     TeamsComponent,
-    ScoresComponent
+    ScoresComponent,
+    TeamAddComponent
   ],
   imports: [
     BrowserAnimationsModule,

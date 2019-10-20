@@ -3,6 +3,7 @@ import { Player } from './player';
 // import { Players} from '../mock-players';
 import {Players} from '../../mock-players';
 import { PlayerService } from '../player.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-players',
@@ -10,22 +11,14 @@ import { PlayerService } from '../player.service';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
-  // players = Players;
-  // player: Player = {
-  //   id: 1,
-  //   name: 'William Ganley',
-  //   nickname: 'Bill',
-  //   email: 'wag945@psu.edu',
-  //   phone: '609-313-3320',
-  //   age: 39,
-  //   handicap: 14,
-  //   league: 'one'
+
   players : Player[];
 
   @ViewChild('players', {static: false}) list: ElementRef;
 
   constructor(private playerService : PlayerService,
-              private renderer: Renderer2) { 
+              private renderer: Renderer2,
+              private router: Router) { 
 
       this.renderer.listen('window', 'click',(e:Event)=>{
         console.log("players: got click event");
@@ -50,12 +43,9 @@ export class PlayersComponent implements OnInit {
       this.selectedPlayer = player;
       console.log('selected player: '+this.selectedPlayer.name);
     }
+
     ngOnInit() {
       this.getPlayers();
-      for (var i = 0; i < this.players.length; i++)
-      {
-        console.log("player "+this.players[i].id+" name: "+this.players[i].name);
-      }
     }
 
     onDelete() {
@@ -65,5 +55,10 @@ export class PlayersComponent implements OnInit {
           this.players.splice(i, 1); 
         }
       }
+    }
+
+    onAdd() {
+      console.log("players onAdd");
+      this.router.navigateByUrl('/addplayer');
     }
 }
