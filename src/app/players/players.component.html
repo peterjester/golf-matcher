@@ -1,23 +1,26 @@
+<app-sidebar></app-sidebar>
 <br>
 <h2 class="header">Players</h2>
 <!-- <cdk-virtual-scroll-viewport itemSize="50" class="players"> -->
 <div *ngIf="!players"><span class="header">Loading..........</span></div>
 <div *ngIf="players">
 <ul class="players">
+        <div class="grid-container">
     <li
         *ngFor="let player of players"         
         (click)="onSelect(player)" 
-        [class.selected]="player === selectedPlayer">      
-            <span class="badge">{{player.handicap}}</span> {{player.name}} <span>({{player.nickname}})</span>
+        [class.selected]="player === selectedPlayer"> 
+                <span class="badge">{{player.handicap}}</span> {{player.name}} <span>({{player.nickname}})</span>
         <!-- <div *ngIf="selectedPlayer && selectedPlayer === player"> -->
         </li>
+        </div>
         <div *ngIf="!selectedPlayer">
                 <button (click)="onAdd()">Add Player</button>
         </div>
         <div *ngIf="selectedPlayer">
                 <button type="submit" (click)="onDelete()" [disabled]="!selectedPlayer">Delete Player</button>
         </div>
-        </ul>
+</ul>
 </div>
 <!-- </cdk-virtual-scroll-viewport> -->
 

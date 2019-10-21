@@ -47,7 +47,7 @@ export class PlayerAddComponent {
       firstName: ['',Validators.required],
       lastName: ['',Validators.required],
       nickname: [''],
-      email: ['',Validators.required],
+      email: ['',Validators.compose([Validators.required, Validators.pattern('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$'), Validators.minLength(1)])],
       phone: ['',Validators.required],
       age: ['',Validators.required],
       handicap: ['',Validators.required],

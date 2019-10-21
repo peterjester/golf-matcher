@@ -1,4 +1,8 @@
-
+.header {
+    text-align: center;
+    color: rgb(13,85,7);
+    font: bold;
+}
 
 input[type=text] {
     padding:5px; 
@@ -63,6 +67,10 @@ button[disabled]{
   color: #666666;
 }
 
+.buttonWrapper{ 
+    text-align: center; 
+}
+
 .alert {
     max-width: 550px;
     position:  relative;
@@ -91,3 +99,18 @@ button[disabled]{
     top: 10px;
     color: white;
 }
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: rgb(13,85,7);
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  

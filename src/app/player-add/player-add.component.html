@@ -1,9 +1,10 @@
 <br>
-<form [formGroup]="angForm" (ngSubmit)="onSubmit()">       
-    <div>
+<h2 class="header">Add Player</h2>
+<form [formGroup]="angForm" (ngSubmit)="onSubmit()" class="grid-container">       
+    <div class="grid-item">
         <label>
             First Name:
-            <input type="text" formControlName="firstName" required>
+            <input type="text" formControlName="firstName" name="firstName" required maxlength="12">
             <!-- <input type="text" id="firstName" class="form-control" formControlName="firstName" required> -->
         </label>    
         <div *ngIf="angForm.controls['firstName'].invalid && (angForm.controls['firstName'].dirty || angForm.controls['firstName'].touched)" class="alert alert-danger">
@@ -12,10 +13,10 @@
                 </div>
         </div>
     </div>
-    <div>
+    <div class="grid-item">
         <label>
             Last Name:
-            <input type="text" id="lastName" formControlName="lastName" required>
+            <input type="text" id="lastName" formControlName="lastName" required maxlength="12">
         </label>
         <div *ngIf="angForm.controls['lastName'].invalid && (angForm.controls['lastName'].dirty || angForm.controls['lastName'].touched)" class="alert alert-danger">
             <div *ngIf="angForm.controls['lastName'].errors.required">
@@ -23,61 +24,51 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="grid-item">
         <label>
             Nickname: 
-            <input id="nickname" type="text" formControlName="nickname">
+            <input id="nickname" type="text" formControlName="nickname" maxlength="12">
         </label>
     </div>
-    <div>
+    <div class="grid-item">
         <label>
             Email:
-            <input id="email" type="text" formControlName="email" required>
+            <input id="email" type="email" formControlName="email" required>
         </label>
-        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)">
                 <div *ngIf="angForm.controls['email'].errors.required">
                         Email is required.
                 </div>
+                <div class="alert alert-danger">Enter valid email address</div>
         </div>
     </div>
-    <div>
+    <div class="grid-item">
         <label>
             Phone:
-            <input id="phone" type="text" formControlName="phone" minlength="7">
+            <input id="phone" type="text" formControlName="phone" name = "phone" minlength="7" maxlength="10">
         </label>
-        <div *ngIf="angForm.controls['phone'].invalid && (angForm.controls['phone'].dirty || angForm.controls['phone'].touched)" class="alert alert-danger">
-                <div *ngIf="angForm.controls['phone'].errors.required">
+        <div *ngIf="angForm.controls['phone'].invalid && (angForm.controls['phone'].dirty || angForm.controls['phone'].touched)">
+                <div *ngIf="angForm.controls['phone'].errors.required"  class="alert alert-danger">
                         Phone is required.
                 </div>
+                <div  class="alert alert-danger">Phone number must be 7 digits</div>
         </div>
-        <!-- <div *ngIf="angForm.controls['phone'].errors.minlength && angForm.controls['phone'].touched" class="alert alert-danger">
-            Phone number must be 7 digits
-        </div> -->
-        <!-- <div *ngIf="(angForm.controls['phone'].dirty || angForm.controls['phone'].touched) && angForm.controls['phone'].errors.minlength" class="alert alert-danger">
-            Phone number must be 7 digits
-        </div> -->
     </div> 
-    <div>
+    <div class="grid-item">
         <label>
             Age:
-            <input id="age" type="number" formControlName="age">
+            <input id="age" type="number" formControlName="age" maxlength="2">
         </label>
         <div *ngIf="angForm.controls['age'].invalid && (angForm.controls['age'].dirty || angForm.controls['age'].touched)" class="alert alert-danger">
             <div *ngIf="angForm.controls['age'].errors.required">
                 Age is required.
             </div>
         </div>
-        <!-- <div *ngIf="(angForm.controls['age'].dirty || 
-                        angForm.controls['age'].touched) && 
-                        angForm.controls['age'].errors.minlength" 
-                        class="alert alert-danger">
-            Age must be two digits
-        </div> -->
     </div>
-    <div>
+    <div class="grid-item">
         <label>
             Handicap:
-            <input id="handicap" type="number" formControlName="handicap">
+            <input id="handicap" type="number" formControlName="handicap" maxlength="2">
         </label>
         <div *ngIf="angForm.controls['handicap'].invalid && (angForm.controls['handicap'].dirty || angForm.controls['handicap'].touched)" class="alert alert-danger">
                 <div *ngIf="angForm.controls['handicap'].errors.required">
@@ -85,10 +76,10 @@
                 </div>
             </div>
         </div>
-    <div>
+    <div class="grid-item">
         <label>
             League:
-            <input id="league" type="text" formControlName="league">
+            <input id="league" type="text" formControlName="league" maxlength="12">
         </label>
         <div *ngIf="angForm.controls['league'].invalid && (angForm.controls['league'].dirty || angForm.controls['league'].touched)" class="alert alert-danger">
                 <div *ngIf="angForm.controls['league'].errors.required">
@@ -96,5 +87,7 @@
                 </div>
         </div>
     </div>
-    <button type="submit" [disabled]="!angForm.valid">Submit</button>
+    <div class="buttonWrapper">
+        <button type="submit" [disabled]="!angForm.valid">Submit</button>
+    </div>
 </form>
