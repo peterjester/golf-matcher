@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { IUser } from './user.model';
 
 
@@ -9,14 +8,13 @@ import { IUser } from './user.model';
 export class AuthService {
   private currentUser: IUser;
 
-  constructor(private router: Router) {
+  constructor() {
 
   }
 
-  loginSuccess(event) {
+  async loginSuccess(event) {
     let userData =  event.providerData[0];
     this.currentUser = userData;
-    this.router.navigate(['/dashboard'])
   }
 
   loginFailed(event) {

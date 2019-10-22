@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import {Players} from '../../mock-players';
 import { TeamService } from '../team.service';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';

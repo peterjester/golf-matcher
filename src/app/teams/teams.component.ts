@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from '../players/player';
-import {Players} from '../../mock-players';
-import {Teams} from '../mock-teams';
-// import { PlayerService } from '../player.service';
 import {TeamService} from '../team.service';
 import { Team } from './team';
 
@@ -14,8 +10,6 @@ import { Team } from './team';
 export class TeamsComponent implements OnInit {
   
   teams: Team[];
-
-  // teams = Teams;
  
   selectedTeam : Team;
 
