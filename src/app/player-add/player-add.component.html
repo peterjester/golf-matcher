@@ -36,7 +36,7 @@
             <input id="email" type="email" formControlName="email" required>
         </label>
         <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)">
-                <div *ngIf="angForm.controls['email'].errors.required">
+                <div *ngIf="angForm.controls['email'].errors.required"  class="alert alert-danger">
                         Email is required.
                 </div>
                 <div class="alert alert-danger">Enter valid email address</div>
