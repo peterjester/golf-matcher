@@ -59,8 +59,10 @@ export class PlayersComponent implements OnInit {
       //     this.players.splice(i, 1); 
       //   }
       // }
-
-      this.playerService.deletePlayer(this.selectedPlayer);
+      if(confirm("Are you sure you want to delete")) {
+        this.playerService.deletePlayer(this.selectedPlayer);
+      }
+    
     }
 
     onAdd() {
