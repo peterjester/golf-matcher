@@ -15,12 +15,15 @@ export class AuthenticationComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
-    this.authService = new AuthService(this.router);
+    this.authService = new AuthService();
   }
 
   loginSuccess(event) {
     console.log('on success: ', event);
-    this.authService.loginSuccess(event);
+    this.authService.loginSuccess(event).then(
+      (res) => this.router.navigate(['/dashboard']),
+      (err: any) => console.error("Error logging in")
+    );
   }
 
   loginFailed(event) {
