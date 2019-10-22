@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Player } from './players/player'
-//import { Players } from './mock-players';
-import {Players} from '../mock-players';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
@@ -37,14 +35,6 @@ export class PlayerService {
 
   addPlayer(player: Player) {
     console.log("PlayerService addPlayer");
-    // Players.push( { id: player.id,
-    //                 name: player.name, 
-    //                 nickname: player.nickname,
-    //                 email: player.email,
-    //                 phone: player.phone,
-    //                 age:  player.age,
-    //                 handicap: player.handicap,
-    //                 league: player.league});
 
     return this.playersCollection.add(player);
   }
