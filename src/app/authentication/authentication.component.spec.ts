@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthenticationComponent } from './authentication.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AuthenticationComponent', () => {
   let component: AuthenticationComponent;
@@ -8,7 +10,11 @@ describe('AuthenticationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthenticationComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ AuthenticationComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+    ]
     })
     .compileComponents();
   }));

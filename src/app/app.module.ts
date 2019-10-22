@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { ScoresComponent } from './scores/scores.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerAddComponent } from './player-add/player-add.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -22,7 +22,7 @@ import { SidebarModule } from 'ng-sidebar';
 import { TeamsComponent } from './teams/teams.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { TeamAddComponent } from './team-add/team-add.component';
 
@@ -57,9 +57,13 @@ import { TeamAddComponent } from './team-add/team-add.component';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    SidebarModule.forRoot()
+    SidebarModule
   ],
-  providers: [],
+  providers: [
+    AngularFirestore,
+    AngularFirestoreModule,
+    FormBuilder
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
