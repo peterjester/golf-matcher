@@ -21,10 +21,8 @@ import { SidebarModule } from 'ng-sidebar';
 
 import { TeamsComponent } from './teams/teams.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-
-import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
-import { AngularFireModule } from 'angularfire2';
 import { TeamAddComponent } from './team-add/team-add.component';
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -41,6 +39,7 @@ import { TeamAddComponent } from './team-add/team-add.component';
     TeamAddComponent
   ],
   imports: [
+    FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
@@ -52,18 +51,13 @@ import { TeamAddComponent } from './team-add/team-add.component';
       { path: 'players', component: PlayersComponent },
     ]),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
     NgxAuthFirebaseUIModule.forRoot(environment.firebaseConfig),
+    AngularFireModule,
     ReactiveFormsModule,
-    FormsModule,
     AppRoutingModule,
     SidebarModule
   ],
-  providers: [
-    AngularFirestore,
-    AngularFirestoreModule,
-    FormBuilder
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
