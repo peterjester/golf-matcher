@@ -86,3 +86,21 @@ button[disabled]{
   font-size: 30px;
   text-align: center;
 }
+
+.addbutton {
+  width: 50px;
+  float: left;
+  margin: 25px;
+}
+
+.editbutton {
+  width: 50px;
+  float: left;
+  margin: 25px;
+}
+
+.deletebutton {
+  width: 50px;
+  float: left;
+  margin: 25px;
+}

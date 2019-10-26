@@ -7,11 +7,37 @@ import { PlayerService } from '../player.service';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {Router} from '@angular/router';
+import {RouterTestingModule} from "@angular/router/testing";
+import { of } from 'rxjs';
+
+const data = of(
+  [
+    { payload: { doc: { id: '1', data: () => (Players[0]) } } },
+    { payload: { doc: { id: '2', data: () => (Players[1]) } } },
+    { payload: { doc: { id: '3', data: () => (Players[2]) } } },
+    { payload: { doc: { id: '4', data: () => (Players[3]) } } }
+  ]
+);
+
+const collectionStub = {
+  snapshotChanges: jasmine.createSpy('snapshotChanges').and.returnValue(data)
+}
+
+const angularFirestoreStub = {
+  collection: jasmine.createSpy('collection').and.returnValue(collectionStub)
+}
 
 describe('PlayersComponent', () => {
   let component: PlayersComponent;
   let fixture: ComponentFixture<PlayersComponent>;
   let player: Player;
+  let service: PlayerService;
+  let angularFirestore: AngularFirestore;
+  let renderer: Renderer2;
+  let routerTest: RouterTestingModule;
+  let router: Router;
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -22,13 +48,21 @@ describe('PlayersComponent', () => {
       ],
       providers: [
         PlayersComponent,
+        RouterTestingModule,
+        PlayerService,
+        { provide: AngularFirestore, useValue: angularFirestoreStub }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
     }));
-
-  it ('Test PlayersComponent name',() => {
+  
+    // beforeEach(() => { 
+    //   router = TestBed.get(Router);
+    //   component = new PlayersComponent(service,renderer,router); 
+    // });
+  
+    it ('Test PlayersComponent name',() => {
     expect(fixture).name === "PlayersComponent";
    });
 
@@ -41,6 +75,8 @@ describe('PlayersComponent', () => {
   });
 
   it('Test PlayersComponent onSelect()',() => { 
-    // component.onSelect(player); 
+    // component.onSelect(player);
+    // fixture.componentInstance.selectedPlayer === null;
   });
+
 });

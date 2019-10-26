@@ -1,40 +1,42 @@
-<div *ngIf="player">
+<div class="grid-container">
     <br>
-    <h2>EDIT: {{player.name}}</h2>
-    <div><span>Id: </span>{{player.id}}</div>
-    <div>
+    <h2 class="header">Player Edit</h2>
+    <div class="grid-item"> 
         <label>Name:
-            <input [(ngModel)]="player.name" placeholder="name"/>
+            <input [(ngModel)]="name" placeholder="name"/>
         </label>
     </div>
-    <div>
+    <div class="grid-item">
         <label>Nickname:
-            <input [(ngModel)]="player.nickname" placeholder="nickname"/>
+            <input [(ngModel)]="nickname" placeholder="nickname"/>
         </label>
     </div>
-    <div>
+    <div class="grid-item">
         <label>Email:
-            <input [(ngModel)]="player.email" placeholder="email"/>
+            <input [(ngModel)]="email" placeholder="email"/>
         </label>
     </div>
-    <div>
+    <div class="grid-item">
         <label>Phone:
-            <input [(ngModel)]="player.phone" placeholder="phone"/>
+            <input [(ngModel)]="phone" placeholder="phone"/>
         </label>    
     </div>
-    <div>
+    <div class="grid-item">
         <label>Age:
-            <input [(ngModel)]="player.age" placeholder="age"/>
+            <input [(ngModel)]="age" placeholder="age"/>
         </label>
     </div>
-    <div> 
+    <div class="grid-item"> 
         <label>Handicap:
-            <input [(ngModel)]="player.handicap" placeholder="handicap"/>
+            <input [(ngModel)]="handicap" placeholder="handicap"/>
         </label>
     </div>
-    <div> 
+    <div class="grid-item"> 
         <label>League:
-            <input [(ngModel)]="player.league" placeholder="league"/>
+            <input [(ngModel)]="league" placeholder="league"/>
         </label>
+    </div>
+    <div class="buttonWrapper">
+        <button type="submit" (click)="onSubmit()">Submit</button>
     </div>
 </div>

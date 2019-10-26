@@ -1,4 +1,8 @@
-
+.header {
+    text-align: center;
+    color: rgb(0,0,0);
+    font: bold;
+}
 
 input[type=text] {
     padding:5px; 
@@ -43,24 +47,15 @@ input[type=submit] {
     vertical-align: middle;
 } */
 
-button {
-    /* background: #0066A2;    */
-    background: rgb(13,85,7); 
-    padding: 5px 15px;  
-    color: white;
-    border-style: outset;
-    border-color: rgb(0,0,0);
-    height: 40px;
-    width: 100px;
-    font: bold 15px arial, sans-serif;
-    text-shadow:none;
-}
-
 button:disabled,
 button[disabled]{
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+
+.buttonWrapper{ 
+    text-align: center; 
 }
 
 .alert {
@@ -71,8 +66,7 @@ button[disabled]{
     border-radius: 3px;
     background-color: #f10808;
     border: 2px solid black;
-    color: white;
-    
+    color: white;    
     border-left-width: 40px;
 }
 .alert:before {
@@ -91,3 +85,17 @@ button[disabled]{
     top: 10px;
     color: white;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: rgb(13,85,7);
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }

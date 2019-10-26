@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'players', component: PlayersComponent },
   { path: '',  component: AuthenticationComponent },
-  { path: 'edit/:id', component: PlayerEditComponent },
+  { path: 'editplayer', component: PlayerEditComponent },
   { path: 'addplayer', component: PlayerAddComponent},
   { path: 'teams', component: TeamsComponent},
   { path: 'scores', component: ScoresComponent}

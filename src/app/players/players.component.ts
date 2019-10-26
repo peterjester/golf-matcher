@@ -3,7 +3,7 @@ import { Player } from './player';
 // import { Players} from '../mock-players';
 import {Players} from '../../mock-players';
 import { PlayerService } from '../player.service';
-import {Router} from '@angular/router';
+import {Router, NavigationExtras} from "@angular/router";
 
 @Component({
   selector: 'app-players',
@@ -44,8 +44,8 @@ export class PlayersComponent implements OnInit {
     selectedPlayer: Player;
   
     onSelect(player: Player): void {
+      console.log("Players onSelect");
       this.selectedPlayer = player;
-      console.log('selected player: '+this.selectedPlayer.name);
     }
 
     ngOnInit() {
@@ -68,5 +68,24 @@ export class PlayersComponent implements OnInit {
     onAdd() {
       console.log("players onAdd");
       this.router.navigateByUrl('/addplayer');
+    }
+
+    onEdit() {
+      console.log("players onEdit");
+      // this.router.navigateByUrl('editplayer');
+      let navigationExtras: NavigationExtras = {
+        queryParams: {
+            "id": this.selectedPlayer.id,
+            "name": this.selectedPlayer.name,
+            "nickname": this.selectedPlayer.nickname,
+            "email": this.selectedPlayer.email,
+            "phone": this.selectedPlayer.phone,
+            "age": this.selectedPlayer.age,
+            "handicap": this.selectedPlayer.handicap,
+            "league": this.selectedPlayer.league,
+            "holes": this.selectedPlayer.holes
+        }
+      };
+      this.router.navigate(["editplayer"], navigationExtras);
     }
 }
