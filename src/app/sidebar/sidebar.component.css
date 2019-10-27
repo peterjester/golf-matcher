@@ -23,3 +23,10 @@ button[disabled]{
     background-color: #cccccc;
     color: #666666;
 }
+
+.splash-picture {
+    float: center;
+    padding-left: 140px;
+    width: 93%;
+    height: 400px;
+}
