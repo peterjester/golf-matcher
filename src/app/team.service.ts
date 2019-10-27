@@ -2,27 +2,47 @@ import { Injectable } from '@angular/core';
 import {Team} from './teams/team'
 import {Teams} from './mock-teams';
 import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { TeamsComponent } from './teams/teams.component';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TeamService {
 
-  constructor() { }
+  private teamsCollection: AngularFirestoreCollection<Team>;
+  teams: Observable<Team[]>;
+
+  constructor(private db: AngularFirestore) { 
+    this.teamsCollection = this.db.collection('Teams');
+  }
 
   getTeams(): Observable<Team[]> {
     console.log("team-service getTeams");
-    return of(Teams);
+    
+    this.teams = this.teamsCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as Team;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+
+    return (this.teams);
+
+    // return of(Teams);
   }
 
   addTeam(team: Team) {
     console.log("TeamService addTeam");
-    Teams.push( { id: team.id,
-                  name: team.name, 
-                  record: team.record,
-                  league: team.league,
-                  players: null});
+    // Teams.push( { id: team.id,
+    //               name: team.name, 
+    //               record: team.record,
+    //               league: team.league,
+    //               players: null});
+
+    return this.teamsCollection.doc(team.id).set(team);
   }
 
   updateTeam(team: Team) {
@@ -40,6 +60,8 @@ export class TeamService {
         Teams[i].players = team.players;
       }
     }
+
+    return this.teamsCollection.doc(team.id).update(team);
   }
 
   deleteTeam(team: Team) {
@@ -49,5 +71,7 @@ export class TeamService {
         console.log("teamservice onDelete deleting index:"+i+" "+team.name);
       }
     }
+
+    return this.teamsCollection.doc(team.id).delete();
   }
 }

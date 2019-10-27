@@ -43,7 +43,7 @@ export class TeamAddComponent implements OnInit {
   onSubmit() {
     console.warn(this.angForm.value);
     this.teamService.addTeam( {
-                    id: this.teams.length+1,
+                    id: (this.teams.length+1).toString(),
                     name: this.angForm.value.name, 
                     record: this.angForm.value.record,
                     league: this.angForm.value.league,
