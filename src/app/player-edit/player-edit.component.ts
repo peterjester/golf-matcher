@@ -41,7 +41,7 @@ export class PlayerEditComponent implements OnInit {
       this.scores = [0];
       console.log("PlayerEditComponent this.id: "+this.id);
       console.log("PlayerEditComponent this.name: "+this.name);
-      console.log("PlayerEditComponent this.holes.length: "+this.holes.length);
+      console.log("PlayerEditComponent this.scores.length: "+this.scores.length);
     });
   }
 
