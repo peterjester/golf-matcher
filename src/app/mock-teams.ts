@@ -16,7 +16,7 @@ export const Teams: Team[] = [
                 age: 39,
                 handicap: 14,
                 league: 'one',
-                holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+                scores: [36]
             }]
     },
     {
@@ -34,7 +34,7 @@ export const Teams: Team[] = [
                 age: 25,
                 handicap: 18,
                 league: 'one',
-                holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+                scores: [45]
             }        
         ]
     },

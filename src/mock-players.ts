@@ -11,7 +11,7 @@ export const Players: Player[] = [
         age: 39,
         handicap: 14,
         league: 'one',
-        holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+        scores: [36]
     },
     { 
         id: "2", 
@@ -22,7 +22,7 @@ export const Players: Player[] = [
         age: 25,
         handicap: 18,
         league: 'one',
-        holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+        scores: [45]
     },
     { 
         id: "3",
@@ -33,7 +33,7 @@ export const Players: Player[] = [
         age: 25,
         handicap: 4,
         league: 'one',
-        holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+        scores: [35]
     },
     {
         id: "4",
@@ -44,6 +44,6 @@ export const Players: Player[] = [
         age: 25,
         handicap: 15,
         league: 'one',
-        holes: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+        scores: [43]
     }
 ];
