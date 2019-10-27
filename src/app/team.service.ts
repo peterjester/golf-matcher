@@ -30,8 +30,6 @@ export class TeamService {
     );
 
     return (this.teams);
-
-    // return of(Teams);
   }
 
   addTeam(team: Team) {
@@ -46,31 +44,31 @@ export class TeamService {
   }
 
   updateTeam(team: Team) {
-    for (var i = 0; i < Teams.length; i++) {
-      console.log("TeamService updateTeam comparing Teams[i].id: "+Teams[i].id+" to "+team.id);
-      if (Teams[i].id == team.id)
-      {
-        console.log("TeamService updateTeam updating id: "+team.id);
-        console.log("TeamService updateTeam updaint name: "+team.name);
-        console.log("TeamService updateTeam updating record: "+team.record);
-        console.log("TeamService updateTeam updating league: "+team.league);
-        Teams[i].name = team.name;
-        Teams[i].record = team.record;
-        Teams[i].league = team.league;
-        Teams[i].players = team.players;
-      }
-    }
+    // for (var i = 0; i < Teams.length; i++) {
+    //   console.log("TeamService updateTeam comparing Teams[i].id: "+Teams[i].id+" to "+team.id);
+    //   if (Teams[i].id == team.id)
+    //   {
+    //     console.log("TeamService updateTeam updating id: "+team.id);
+    //     console.log("TeamService updateTeam updaint name: "+team.name);
+    //     console.log("TeamService updateTeam updating record: "+team.record);
+    //     console.log("TeamService updateTeam updating league: "+team.league);
+    //     Teams[i].name = team.name;
+    //     Teams[i].record = team.record;
+    //     Teams[i].league = team.league;
+    //     Teams[i].players = team.players;
+    //   }
+    // }
 
     return this.teamsCollection.doc(team.id).update(team);
   }
 
   deleteTeam(team: Team) {
-    for( var i = 0; i < Teams.length; i++){ 
-      if ( Teams[i] === team) {
-        Teams.splice(i, 1); 
-        console.log("teamservice onDelete deleting index:"+i+" "+team.name);
-      }
-    }
+    // for( var i = 0; i < Teams.length; i++){ 
+    //   if ( Teams[i] === team) {
+    //     Teams.splice(i, 1); 
+    //     console.log("teamservice onDelete deleting index:"+i+" "+team.name);
+    //   }
+    // }
 
     return this.teamsCollection.doc(team.id).delete();
   }
