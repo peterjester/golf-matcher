@@ -18,10 +18,22 @@ export class TeamService {
   addTeam(team: Team) {
     console.log("TeamService addTeam");
     Teams.push( { id: team.id,
-                    name: team.name, 
-                    record: team.record,
-                    league: team.league,
-                    players: null});
+                  name: team.name, 
+                  record: team.record,
+                  league: team.league,
+                  players: null});
+  }
+
+  updateTeam(team: Team) {
+    for (var i = 0; i < Teams.length; i++) {
+      if (Teams[i].id === team.id)
+      {
+        Teams[i].name = team.name;
+        Teams[i].record = team.record;
+        Teams[i].league = team.league;
+        Teams[i].players = team.players;
+      }
+    }
   }
 
   deleteTeam(team: Team) {
