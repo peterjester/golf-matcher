@@ -8,6 +8,7 @@ import { TeamsComponent } from './teams/teams.component';
 import { TeamAddComponent } from './team-add/team-add.component';
 import { ScoresComponent } from './scores/scores.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { TeamEditComponent } from './team-edit/team-edit.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'addplayer', component: PlayerAddComponent},
   { path: 'teams', component: TeamsComponent},
   { path: 'addteam', component: TeamAddComponent},
+  { path: 'editteam', component: TeamEditComponent},
   { path: 'scores', component: ScoresComponent}
 ];
 

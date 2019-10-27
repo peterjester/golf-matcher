@@ -1,0 +1,114 @@
+.header {
+    text-align: center;
+    color: rgb(13,85,7);
+    font: bold;
+}
+
+input[type=text] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    align-content: left;
+    vertical-align:middle;
+}
+
+input[type=number] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    align-content: left;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+/* div {
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    border: 1px solid red;
+} */
+
+/* div {
+    height: 100%;
+    display: table-cell; 
+    vertical-align: middle;
+} */
+
+button {
+    /* background: #0066A2;    */
+    background: rgb(13,85,7); 
+    padding: 5px 15px;  
+    color: white;
+    border-style: outset;
+    border-color: rgb(0,0,0);
+    height: 40px;
+    width: 100px;
+    font: bold 15px arial, sans-serif;
+    text-shadow:none;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.buttonWrapper{ 
+    text-align: center; 
+}
+
+.alert {
+    max-width: 550px;
+    position:  relative;
+    padding: 10px 20px 10px 10px;
+    margin:  10px auto;
+    border-radius: 3px;
+    background-color: #f10808;
+    border: 2px solid black;
+    color: white;
+    
+    border-left-width: 40px;
+}
+.alert:before {
+    content: '\f071';
+    font-family: "FontAwesome";
+    position: absolute;
+    left: -27px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+.alert .close {
+    position:  absolute;
+    right: 8px;
+    cursor:  pointer;
+    top: 10px;
+    color: white;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: rgb(13,85,7);
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }

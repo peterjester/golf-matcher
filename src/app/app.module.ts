@@ -23,6 +23,7 @@ import { TeamsComponent } from './teams/teams.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TeamAddComponent } from './team-add/team-add.component';
 import { AngularFireModule } from '@angular/fire';
+import { TeamEditComponent } from './team-edit/team-edit.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AngularFireModule } from '@angular/fire';
     SidebarComponent,
     TeamsComponent,
     ScoresComponent,
-    TeamAddComponent
+    TeamAddComponent,
+    TeamEditComponent
   ],
   imports: [
     FormsModule,

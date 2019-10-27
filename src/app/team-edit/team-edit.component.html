@@ -1,0 +1,22 @@
+<div class="grid-container">
+    <br>
+    <h2 class="header">Team Edit</h2>
+    <div class="grid-item"> 
+        <label>Name:
+            <input [(ngModel)]="name" placeholder="name"/>
+        </label>
+    </div>
+    <div class="grid-item">
+        <label>Record:
+            <input [(ngModel)]="record" placeholder="record"/>
+        </label>
+    </div>
+    <div class="grid-item">
+        <label>League:
+            <input [(ngModel)]="league" placeholder="league"/>
+        </label>
+    </div>
+    <div class="buttonWrapper">
+        <button type="submit" (click)="onSubmit()">Submit</button>
+    </div>
+</div>

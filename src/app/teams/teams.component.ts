@@ -60,7 +60,6 @@ export class TeamsComponent implements OnInit {
 
   onEdit() {
     console.log("teams onEdit");
-    // this.router.navigateByUrl('editplayer');
     let navigationExtras: NavigationExtras = {
       queryParams: {
           "id": this.selectedTeam.id,
