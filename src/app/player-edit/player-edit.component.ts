@@ -19,7 +19,7 @@ export class PlayerEditComponent implements OnInit {
   public age: number;
   public handicap: number;
   public league: string;
-  public holes: number[];
+  public scores: number[];
   public editedPlayer: Player;
 
   public constructor(private route: ActivatedRoute,
@@ -38,10 +38,10 @@ export class PlayerEditComponent implements OnInit {
       this.age = params["age"];
       this.handicap = params["handicap"];
       this.league = params["league"];
-      this.holes = [0];
+      this.scores = [0];
       console.log("PlayerEditComponent this.id: "+this.id);
       console.log("PlayerEditComponent this.name: "+this.name);
-      console.log("PlayerEditComponent this.holes.length: "+this.holes.length);
+      console.log("PlayerEditComponent this.scores.length: "+this.scores.length);
     });
   }
 
@@ -61,7 +61,7 @@ export class PlayerEditComponent implements OnInit {
       age:  this.age,
       handicap: this.handicap,
       league: this.league,
-      holes: this.holes
+      scores: this.scores
     });
     this.router.navigateByUrl("players");
   }

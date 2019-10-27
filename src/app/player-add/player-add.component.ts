@@ -52,7 +52,7 @@ export class PlayerAddComponent {
       age: ['',Validators.required],
       handicap: ['',Validators.required],
       league: ['',Validators.required],
-      holes: ['']
+      scores: ['']
     })
   }
 
@@ -75,7 +75,7 @@ export class PlayerAddComponent {
                     age:  this.angForm.value.age,
                     handicap: this.angForm.value.handicap,
                     league: this.angForm.value.league,
-                    holes: this.angForm.value.holes});
+                    scores: this.angForm.value.scores});
     
     this.router.navigateByUrl('/players');
   }
