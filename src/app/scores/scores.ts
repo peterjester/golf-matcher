@@ -7,4 +7,5 @@ export class Player {
     age: number;
     handicap: number;
     league: string;
+    scores: number[];
 }
