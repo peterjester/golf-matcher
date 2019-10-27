@@ -83,7 +83,7 @@ export class PlayersComponent implements OnInit {
             "age": this.selectedPlayer.age,
             "handicap": this.selectedPlayer.handicap,
             "league": this.selectedPlayer.league,
-            "holes": this.selectedPlayer.holes
+            "scores": this.selectedPlayer.scores
         }
       };
       this.router.navigate(["editplayer"], navigationExtras);
