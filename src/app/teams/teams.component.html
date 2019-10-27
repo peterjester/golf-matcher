@@ -16,7 +16,7 @@
                 <button (click)="onAdd()">Add Team</button>
         </div>
         <div class="editbutton">
-                <button (click)="onEdit()" [disabled]="true">Edit Team</button>
+                <button (click)="onEdit()" [disabled]="!selectedTeam">Edit Team</button>
         </div>
         <div class="deletebutton">
                         <button type="submit" (click)="onDelete()" [disabled]="!selectedTeam">Delete Team</button>
