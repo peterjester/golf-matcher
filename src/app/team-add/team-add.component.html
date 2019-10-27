@@ -1,10 +1,10 @@
-<app-sidebar></app-sidebar>>
-<br>
-<form [formGroup]="angForm" (ngSubmit)="onSubmit()">       
-    <div>
+<app-sidebar></app-sidebar>
+<h2 class="header">Add Team</h2>
+<form [formGroup]="angForm" (ngSubmit)="onSubmit()" class="grid-container">       
+    <div class="grid-item">
         <label>
             Name:
-            <input type="text" formControlName="name" required>
+            <input type="text" formControlName="name" required maxlength="12">
             <!-- <input type="text" id="firstName" class="form-control" formControlName="firstName" required> -->
         </label>    
         <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
@@ -13,5 +13,31 @@
                 </div>
         </div>
     </div>
-    <button type="submit" [disabled]="!angForm.valid">Submit</button>
+    <div class="grid-item">
+        <label>
+            Record:
+            <input type="text" formControlName="record" required maxlength="6">
+            <!-- <input type="text" id="firstName" class="form-control" formControlName="firstName" required> -->
+        </label>    
+        <div *ngIf="angForm.controls['record'].invalid && (angForm.controls['record'].dirty || angForm.controls['record'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['record'].errors.required">
+                    Record is required.
+                </div>
+        </div>
+    </div>
+    <div class="grid-item">
+        <label>
+            League:
+            <input type="text" formControlName="league" required maxlength="12">
+            <!-- <input type="text" id="firstName" class="form-control" formControlName="firstName" required> -->
+        </label>    
+        <div *ngIf="angForm.controls['league'].invalid && (angForm.controls['league'].dirty || angForm.controls['league'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['league'].errors.required">
+                    League is required.
+                </div>
+        </div>
+    </div>
+    <div class="buttonWrapper">
+        <button type="submit" [disabled]="!angForm.valid">Submit</button>
+    </div>
 </form>
