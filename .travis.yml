@@ -15,6 +15,7 @@ script:
 #- ng lint #Turn off lint for now
 - npm run test-headless
 - ng build --prod --base-href https://peterjester.github.io/golf-matcher
+- npm run test-headless
 - firebase deploy
 
 notifications:
