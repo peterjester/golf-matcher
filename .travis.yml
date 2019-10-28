@@ -1,22 +1,21 @@
 language: node_js
 node_js:
-  - "11"
+- '11'
 dist: trusty
 sudo: required
-
 branches:
   only:
   - master
-
 before_script:
-  - npm install -g @angular/cli
-
+- npm install -g @angular/cli
 script:
-#- ng lint #Turn off lint for now
 - npm run test-headless
 - ng build --prod --base-href https://peterjester.github.io/golf-matcher
 - npm run test-headless
-- firebase deploy
-
 notifications:
   slack: golfmatcher:WfLcaJJSiwwLEFDCm6i4YDML
+deploy:
+  provider: firebase
+  token:
+    secure: Jx4NeTJXNGXdakpYYKfTTq+gG7jvBhiEGLOhRqvqS4toKE082LgALp8HhhgHaqHfxcJjfg2pl0Mr9dlbL32ZSN6Kfeed3Z2OuAV1Fyg3aYBhWwF2LzbS1YHXucPindOoC0mSjBfwMSLrvOnR1/I6B6G3ZFd4IrdWqGFdUjVtt49evIHtDHf9veu1y2Fkf9pkCfHUXwXuT8jCa2Sb/jxQW2D4jSgCQy3oVPA1FWeGe93wtskM3NsWChUmAFZyNbZgucIEd6gzBFA/35l22VlPzEXoWXhgzbLFxYpQBR2IZYNRlx8t17cS+47REOsd8acb7NFjQVhcfMhh1vBmQPnFCBZ13Tq1sGEp/mvmNZxpoLgi38UN6UXrTaFqfECiRmLbfTj4pNP8BsJd0JqBjrkcr+0oz1BHvjSb8ymA36+2/v3O3ZrJcwhOcvsQ7GDoblAebSHRko1jic2WB9yVwsknOss7+ToWkh7igjtqYXaGg8QlDmqZ3u0PZ/NeTZQa3Zw+cnXvg9dsi/rm+MajCARhvoMjS6psTSBG36aTVEliOg/gq9WM715isfyN6veh/AxOucnB5WN7AKkX69gcUTUCi0UP9oR1yD+UWgZGSciTubojyCrUwQDEAU51PPV2SpJT7WVs/0DMI6p7usJ1b7iOxGF2cOYV8Cg7Mt9QJrd2qAY=
+  message: "Succesfully Deployed to Firebase Host"
