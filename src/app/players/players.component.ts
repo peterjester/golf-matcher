@@ -50,6 +50,7 @@ export class PlayersComponent implements OnInit {
 
     ngOnInit() {
       this.getPlayers();
+      this.router.navigateByUrl('/players');
     }
 
     onDelete() {

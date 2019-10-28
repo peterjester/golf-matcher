@@ -3,13 +3,17 @@ node_js:
   - "11"
 dist: trusty
 sudo: required
+
 branches:
   only:
   - master
+
 before_script:
   - npm install -g @angular/cli
+
 script:
 #- ng lint #Turn off lint for now
+- npm run test-headless
 - ng build --prod --base-href https://peterjester.github.io/golf-matcher
 
 notifications:
