@@ -19,17 +19,17 @@ export class TeamsComponent implements OnInit {
   constructor(private teamService : TeamService,
               private renderer: Renderer2,
               private router: Router) {
-    this.renderer.listen('window', 'click',(e:Event)=>{
-      console.log("teams: got click event");
-      let elementId: string = (event.target as Element).id;
-      let className: string = (event.target as Element).className; 
-      console.log("teams: elementId="+elementId);
-      console.log("teams: className="+className);
-      if (className !== "selected")
-      {
-        this.selectedTeam=null;
-      }
-    });
+    // this.renderer.listen('window', 'click',(e:Event)=>{
+    //   // console.log("teams: got click event");
+    //   let elementId: string = (event.target as Element).id;
+    //   let className: string = (event.target as Element).className; 
+    //   // console.log("teams: elementId="+elementId);
+    //   // console.log("teams: className="+className);
+    //   if (className !== "selected")
+    //   {
+    //     this.selectedTeam=null;
+    //   } 
+    // });
   }
 
   ngOnInit() {

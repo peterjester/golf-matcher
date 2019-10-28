@@ -20,17 +20,17 @@ export class PlayersComponent implements OnInit {
               private renderer: Renderer2,
               private router: Router) { 
 
-      this.renderer.listen('window', 'click',(e:Event)=>{
-        console.log("players: got click event");
-        let elementId: string = (event.target as Element).id;
-        let className: string = (event.target as Element).className; 
-        console.log("players: elementId="+elementId);
-        console.log("players: className="+className);
-        if (className !== "selected")
-        {
-          this.selectedPlayer=null;
-        }
-      });
+      // this.renderer.listen('window', 'click',(e:Event)=>{
+      //   console.log("players: got click event");
+      //   let elementId: string = (event.target as Element).id;
+      //   let className: string = (event.target as Element).className; 
+      //   console.log("players: elementId="+elementId);
+      //   console.log("players: className="+className);
+      //   if (className !== "selected")
+      //   {
+      //     this.selectedPlayer=null;
+      //   }
+      // });
   }
        
     getPlayers(): void {
