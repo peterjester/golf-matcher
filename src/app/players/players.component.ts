@@ -4,6 +4,7 @@ import { Player } from './player';
 import {Players} from '../../mock-players';
 import { PlayerService } from '../player.service';
 import {Router, NavigationExtras} from "@angular/router";
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-players',
@@ -13,8 +14,12 @@ import {Router, NavigationExtras} from "@angular/router";
 export class PlayersComponent implements OnInit {
 
   players : Player[];
+  findPlayer: string;
+  playerNotFound: boolean;
 
-  @ViewChild('players', {static: false}) list: ElementRef;
+  // @ViewChild('players', {static: false}) list: ElementRef;
+  @ViewChild(CdkVirtualScrollViewport,null)
+  viewport: CdkVirtualScrollViewport;
 
   constructor(private playerService : PlayerService,
               private renderer: Renderer2,
@@ -31,12 +36,13 @@ export class PlayersComponent implements OnInit {
       //     this.selectedPlayer=null;
       //   }
       // });
+      this.playerNotFound = false;
   }
        
     getPlayers(): void {
         this.playerService.getPlayers()
         .subscribe(players => {
-          console.log("players getPlayers subscribe returned");
+          // console.log("players getPlayers subscribe returned");
           this.players = players;
           this.router.navigateByUrl('/players');
         });
@@ -44,7 +50,7 @@ export class PlayersComponent implements OnInit {
     selectedPlayer: Player;
   
     onSelect(player: Player): void {
-      console.log("Players onSelect");
+      // console.log("Players onSelect");
       this.selectedPlayer = player;
     }
 
@@ -54,7 +60,7 @@ export class PlayersComponent implements OnInit {
     }
 
     onDelete() {
-      console.log("players onDelete selectedPlayer:"+this.selectedPlayer.name);
+      // console.log("players onDelete selectedPlayer:"+this.selectedPlayer.name);
       // for( var i = 0; i < this.players.length; i++){ 
       //   if ( this.players[i] === this.selectedPlayer) {
       //     this.players.splice(i, 1); 
@@ -67,12 +73,12 @@ export class PlayersComponent implements OnInit {
     }
 
     onAdd() {
-      console.log("players onAdd");
+      // console.log("players onAdd");
       this.router.navigateByUrl('/addplayer');
     }
 
     onEdit() {
-      console.log("players onEdit");
+      // console.log("players onEdit");
       // this.router.navigateByUrl('editplayer');
       let navigationExtras: NavigationExtras = {
         queryParams: {
@@ -88,5 +94,28 @@ export class PlayersComponent implements OnInit {
         }
       };
       this.router.navigate(["editplayer"], navigationExtras);
+    }
+
+    onFind() {
+      // console.log("players onFind findPlayer="+this.findPlayer);
+      this.playerNotFound = false;
+      let matchFound: boolean;
+      matchFound = false;
+      for( var i = 0; i < this.players.length; i++){ 
+        if ( this.players[i].name.includes(this.findPlayer)) {
+          // console.log("players onFind found match for "+this.findPlayer+" in item "+i);
+          matchFound = true;
+          this.viewport.scrollToIndex(i);
+        }
+      }
+      if (false == matchFound)
+      {
+        this.playerNotFound = true;
+      }
+    }
+
+    findByNameFocus() {
+      // console.log("players findByNameFocus");
+      this.playerNotFound = false;
     }
 }

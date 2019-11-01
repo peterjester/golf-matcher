@@ -24,6 +24,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TeamAddComponent } from './team-add/team-add.component';
 import { AngularFireModule } from '@angular/fire';
 import { TeamEditComponent } from './team-edit/team-edit.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { TeamEditComponent } from './team-edit/team-edit.component';
     AngularFireModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    SidebarModule
+    SidebarModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
