@@ -25,6 +25,8 @@ import { TeamAddComponent } from './team-add/team-add.component';
 import { AngularFireModule } from '@angular/fire';
 import { TeamEditComponent } from './team-edit/team-edit.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { DemoMaterialModule } from './leaderboard/mat-material';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     TeamsComponent,
     ScoresComponent,
     TeamAddComponent,
-    TeamEditComponent
+    TeamEditComponent,
+    LeaderboardComponent
   ],
   imports: [
     FormsModule,
@@ -59,7 +62,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     ReactiveFormsModule,
     AppRoutingModule,
     SidebarModule,
-    ScrollingModule
+    ScrollingModule,
+    DemoMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
