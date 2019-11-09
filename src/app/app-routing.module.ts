@@ -9,6 +9,7 @@ import { TeamAddComponent } from './team-add/team-add.component';
 import { ScoresComponent } from './scores/scores.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { TeamEditComponent } from './team-edit/team-edit.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'teams', component: TeamsComponent},
   { path: 'addteam', component: TeamAddComponent},
   { path: 'editteam', component: TeamEditComponent},
-  { path: 'scores', component: ScoresComponent}
+  { path: 'scores', component: ScoresComponent},
+  { path: 'leaderboard', component: LeaderboardComponent }
 ];
 
 @NgModule({

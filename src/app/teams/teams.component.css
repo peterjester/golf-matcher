@@ -119,3 +119,48 @@
     float: left;
     margin: 25px;
   }
+  .findByName {
+    float: left;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font: bold 15px arial, sans-serif;
+    text-align: left;
+  }
+  .findButton {
+    width: 100px;
+    float: left;
+    margin: 15px;
+  }
+  .alert {
+    max-width: 550px;
+    position:  relative;
+    padding: 10px 20px 10px 10px;
+    margin:  10px auto;
+    border-radius: 3px;
+    background-color: #f10808;
+    border: 2px solid black;
+    color: white;
+    
+    border-left-width: 40px;
+  }
+  .alert:before {
+    content: '\f071';
+    font-family: "FontAwesome";
+    position: absolute;
+    left: -27px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+  .alert .close {
+    position:  absolute;
+    right: 8px;
+    cursor:  pointer;
+    top: 10px;
+    color: white;
+  }
+  .findByNameLabel {
+    margin-left: 20px;
+  }
+  

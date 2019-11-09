@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Router} from '@angular/router';
 import {RouterTestingModule} from "@angular/router/testing";
 import { of } from 'rxjs';
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const data = of(
   [
@@ -45,6 +47,7 @@ describe('PlayersComponent', () => {
       imports: [
         FormsModule,
         ReactiveFormsModule,
+        ScrollingModule,
       ],
       providers: [
         PlayersComponent,

@@ -1,0 +1,19 @@
+<app-sidebar></app-sidebar>
+<br>
+<div class="tablediv">
+<table matSort (matSortChange)="sortData($event)" class="mat-table">
+    <tr class="mat-header-row">
+      <th mat-sort-header="name" class="mat-header-cell">Name</th>
+      <th mat-sort-header="age" class="mat-header-cell">Age</th>
+      <th mat-sort-header="handicap" class="mat-header-cell">Handicap</th>
+      <th mat-sort-header="league" class="mat-header-cell">League</th>
+    </tr>
+  
+    <tr *ngFor="let player of players" class="mat-row">
+      <td class="mat-cell" :last-child>{{player.name}}</td>
+      <td class="mat-cell" :last-child>{{player.age}}</td>
+      <td class="mat-cell" :last-child>{{player.handicap}}</td>
+      <td class="mat-cell" :last-child>{{player.league}}</td>
+    </tr>
+  </table>
+  </div>

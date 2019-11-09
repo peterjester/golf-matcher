@@ -4,6 +4,7 @@ import { TeamsComponent } from './teams.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 describe('TeamsComponent', () => {
   let component: TeamsComponent;
@@ -15,7 +16,8 @@ describe('TeamsComponent', () => {
       imports: [
         FormsModule,
         ReactiveFormsModule,
-        RouterTestingModule
+        RouterTestingModule,
+        ScrollingModule,
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })
