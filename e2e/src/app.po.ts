@@ -5,6 +5,10 @@ export class AppPage {
     return browser.get(browser.baseUrl) as Promise<any>;
   }
 
+  navigateToLocation(location: string) {
+    return browser.get(location) as Promise<any>;
+  } 
+
   getTitleText() {
     return element(by.css('app-root h1')).getText() as Promise<string>;
   }

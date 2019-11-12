@@ -8,7 +8,8 @@
     "test": "ng test",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "pree2e": "webdriver-manager update --standalone false --gecko false --versions.chrome 2.44",
+    "e2e": "ng e2e --webdriver-update=false"
   },
   "private": true,
   "dependencies": {
@@ -26,16 +27,20 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "angularfire2": "^5.2.1",
     "bootstrap": "^4.3.1",
+    "chromedriver": "^78.0.1",
     "core-js": "^2.5.4",
     "devextreme": "^19.1.6",
     "devextreme-angular": "^19.1.6",
     "firebase": "^6.6.2",
     "font-awesome": "^4.7.0",
+    "geckodriver": "^1.19.1",
     "jszip": "^3.2.2",
     "ng-sidebar": "^9.1.1",
     "ngx-auth-firebaseui": "^3.4.2",
     "rxjs": "~6.5.3",
+    "selenium-webdriver": "^4.0.0-alpha.5",
     "tslib": "^1.9.0",
+    "webdriver-manager": "^12.1.7",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
