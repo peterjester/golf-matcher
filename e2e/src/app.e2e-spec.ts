@@ -8,7 +8,7 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display title', () => {
     page.navigateTo();
     // page.navigateToLocation("/dashboard");
     expect(page.getTitleText()).toEqual('Golf Matcher');
@@ -17,6 +17,46 @@ describe('workspace-project App', () => {
   it('should display dashboard',() => {
     page.navigateToLocation('/dashboard');
     expect(page.getTitleText()).toEqual('Golf Matcher');
+  });
+
+  it('should display dashboard link',() => {
+    page.navigateToLocation('/dashboard');
+    expect(page.getDashboardLink()).toBeDefined;
+  });
+
+  it ('should display players link',() => {
+    page.navigateToLocation('/dashboard');
+    expect(page.getPlayersLink()).toBeDefined;
+  });
+
+  it ('should display teams link',() => {
+    page.navigateToLocation('/dashboard');
+    expect(page.getTeamsLink()).toBeDefined;
+  });
+
+  it ('should display handicaps link',() => {
+    page.navigateToLocation('/dashboard');
+    expect(page.getHandicapsLink()).toBeDefined;
+  });
+
+  it ('should display schedule link',() => {
+    page.navigateToLocation('/dashboard');
+    expect(page.getScheduleLink()).toBeDefined;
+  });
+
+  it ('should display scores link',() => {
+    page.navigateToLocation('/dashboard');
+    expect(page.getScoresLink()).toBeDefined;
+  });
+
+  it ('should display leaderboard link',() => {
+    page.navigateToLocation('/dashboard');
+    expect(page.getLeaderboardLink()).toBeDefined;
+  });
+
+  it ('should navigate to players',() => {
+    page.navigateToLocation('/players');
+    expect(page.getPlayersTitleText()).toEqual('Players');
   });
 
   afterEach(async () => {
