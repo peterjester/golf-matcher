@@ -14,6 +14,11 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('Golf Matcher');
   });
 
+  it('should display dashboard',() => {
+    page.navigateToLocation('/dashboard');
+    expect(page.getTitleText()).toEqual('Golf Matcher');
+  });
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
