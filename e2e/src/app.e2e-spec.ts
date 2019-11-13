@@ -19,6 +19,14 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('Golf Matcher');
   });
 
+  it ('sidebar button should be clickable',() => {
+    page.getSidebarButton().click();
+  });
+
+  it ('splash img should exist',() => {
+    expect(page.getSplashImage().isPresent()).toBe(true);
+  });
+
   it('should display dashboard link',() => {
     page.navigateToLocation('/dashboard');
     expect(page.getDashboardLink()).toBeDefined;
@@ -54,10 +62,15 @@ describe('workspace-project App', () => {
     expect(page.getLeaderboardLink()).toBeDefined;
   });
 
-  it ('should navigate to players',() => {
+  it ('should display players title',() => {
     page.navigateToLocation('/players');
     expect(page.getPlayersTitleText()).toEqual('Players');
   });
+
+  // it ('players add player should be clickable',() => {
+  //   page.navigateToLocation('/players');
+  //   page.getAddPlayerButton().click();
+  // });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

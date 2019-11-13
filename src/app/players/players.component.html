@@ -3,7 +3,7 @@
 <h2 class="header">Players</h2>
 <!-- <cdk-virtual-scroll-viewport itemSize="50" class="players"> -->
 <div *ngIf="!players"><span class="header">Loading..........</span></div>
-<div *ngIf="players">
+<div class="playersdiv" *ngIf="players">
 <ul class="players">
         <div class="grid-container">
         <cdk-virtual-scroll-viewport  style="height: 260px" itemSize="30" >

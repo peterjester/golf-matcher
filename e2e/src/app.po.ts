@@ -13,8 +13,20 @@ export class AppPage {
     return element(by.css('app-root h1')).getText() as Promise<string>;
   }
 
+  getSidebarButton() {
+    return element(by.buttonText('Sidebar'));
+  }
+
+  getSplashImage() {
+    return element(by.className('splash-picture'));
+  }
+
   getPlayersTitleText() {
     return element(by.css('app-players h2')).getText() as Promise<string>;
+  }
+
+  getDashboardById() {
+    return element(by.id('dashboardlink'));
   }
 
   getDashboardLink() {
@@ -46,11 +58,12 @@ export class AppPage {
   }
 
   getPlayersText() {
-    return element(by.css('app-players h2')).getText() as Promise<string>;
+    // return element(by.css('app-players h2')).getText() as Promise<string>;
+    return element(by.css('app-players .header')).getText() as Promise<string>;
   }
 
   getAddPlayerButton() {
-    return element(by.buttonText('Add Player'));
+    return element(by.className('addPlayerButton'));
   }
 
 }
