@@ -24,10 +24,10 @@
         <!-- <div class="deletebutton" *ngIf="selectedPlayer"> -->
 
         <div class="editbutton">
-                <button (click)="onEdit()" [disabled]="!selectedPlayer">Edit Player</button>
+                <button class="editPlayerButton" (click)="onEdit()" [disabled]="!selectedPlayer">Edit Player</button>
         </div>
         <div class="deletebutton">
-                        <button type="submit" (click)="onDelete()" [disabled]="!selectedPlayer">Delete Player</button>
+                        <button class="deletePlayerButton" type="submit" (click)="onDelete()" [disabled]="!selectedPlayer">Delete Player</button>
         </div>
         <div class="findByName">
                 <label class="findByNameLabel">Find By Name:

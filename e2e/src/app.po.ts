@@ -7,10 +7,14 @@ export class AppPage {
 
   navigateToLocation(location: string) {
     return browser.get(location) as Promise<any>;
-  } 
+  }
+  
+  getSignOnButton() {
+    return element(by.className('sign-out-button.action-button.mat-stroked-button.mat-button-base.mat-warn'));
+  }
 
   getTitleText() {
-    return element(by.css('app-root h1')).getText() as Promise<string>;
+    return element(by.className('appTitle')).getText() as Promise<string>;
   }
 
   getSidebarButton() {
@@ -19,6 +23,22 @@ export class AppPage {
 
   getSplashImage() {
     return element(by.className('splash-picture'));
+  }
+
+  getDashboardPlayersTitle() {
+    return element(by.css('h3')).getText() as Promise<string>;
+  }
+
+  getDashboardPlayersCount() {
+    return element.all(by.css('h4'));
+  }
+
+  getDashboardTeamsTitle() {
+    return element(by.className('teamsTitle')).getText() as Promise<string>;
+  }
+
+  getDashboardTeamsCount() {
+    return element.all(by.css('h4'));
   }
 
   getPlayersTitleText() {
@@ -63,7 +83,20 @@ export class AppPage {
   }
 
   getAddPlayerButton() {
-    return element(by.className('addPlayerButton'));
+    // return element(by.css('app-players .addPlayerButton')).getText() as Promise<string>;
+    return element.all(by.css('button'));
+  }
+
+  getEditPlayerButton() {
+    return element.all(by.className('editPlayerButton'));
+  }
+
+  getDeletePlayerButton() {
+    return element.all(by.className('deletePlayerButton'));
+  }
+
+  getFindPlayerButton() {
+    return element.all(by.className('findButton'));
   }
 
 }
