@@ -118,6 +118,101 @@ describe('workspace-project App', () => {
       });
   });
 
+  //Add Player Page
+  it('should display add player title',() => {
+    page.navigateToLocation('addplayer');
+    expect(page.getAddPlayerTitleText()).toEqual('Add Player');
+  });
+
+  it('add player input fields should exist',() => {
+    page.navigateToLocation('/addplayer');
+    browser.waitForAngular().then( function() {
+      page.getAddPlayerInputs().count().then(function(count) {
+        expect(count >= 8);
+        });
+      });
+  });
+
+  it('add player firstname takes input',() => {
+    page.navigateToLocation('/addplayer');
+    browser.waitForAngular().then( function() {
+      page.getAddPlayerFirstNameInput().sendKeys("First Name");
+      page.getAddPlayerFirstNameInput().getText().then(function(text){
+        expect(text == "First Name");
+      });
+    });
+  });
+
+  it('add player lastname takes input',() => {
+    page.navigateToLocation('/addplayer');
+    browser.waitForAngular().then( function() {
+      page.getAddPlayerLastNameInput().sendKeys("Last Name");
+      page.getAddPlayerLastNameInput().getText().then(function(text){
+        expect(text == "Last Name");
+      });
+    });
+  });
+
+  it('add player nickname takes input',() => {
+    page.navigateToLocation('/addplayer');
+    browser.waitForAngular().then( function() {
+      page.getAddPlayerNickNameInput().sendKeys("Nick Name");
+      page.getAddPlayerNickNameInput().getText().then(function(text){
+        expect(text == "Nick Name");
+      });
+    });
+  });
+
+  it('add player email takes input',() => {
+    page.navigateToLocation('/addplayer');
+    browser.waitForAngular().then( function() {
+      page.getAddPlayerEmailInput().sendKeys("email@email.com");
+      page.getAddPlayerEmailInput().getText().then(function(text){
+        expect(text == "email@email.com");
+      });
+    });
+  });
+
+  it('add player phone takes input',() => {
+    page.navigateToLocation('/addplayer');
+    browser.waitForAngular().then( function() {
+      page.getAddPlayerPhoneInput().sendKeys("Phone");
+      page.getAddPlayerPhoneInput().getText().then(function(text){
+        expect(text == "Phone");
+      });
+    });
+  });
+
+  it('add player age takes input',() => {
+    page.navigateToLocation('/addplayer');
+    browser.waitForAngular().then( function() {
+      page.getAddPlayerAgeInput().sendKeys("Age");
+      page.getAddPlayerAgeInput().getText().then(function(text){
+        expect(text == "Age");
+      });
+    });
+  });
+
+  it('add player handicap takes input',() => {
+    page.navigateToLocation('/addplayer');
+    browser.waitForAngular().then( function() {
+      page.getAddPlayerHandicapInput().sendKeys("Handicap");
+      page.getAddPlayerHandicapInput().getText().then(function(text){
+        expect(text == "Handicap");
+      });
+    });
+  });
+
+  it('add player league takes input',() => {
+    page.navigateToLocation('/addplayer');
+    browser.waitForAngular().then( function() {
+      page.getAddPlayerLeagueInput().sendKeys("League");
+      page.getAddPlayerLeagueInput().getText().then(function(text){
+        expect(text == "League");
+      });
+    });
+  });
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);

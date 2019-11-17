@@ -84,7 +84,7 @@ export class AppPage {
 
   getAddPlayerButton() {
     // return element(by.css('app-players .addPlayerButton')).getText() as Promise<string>;
-    return element.all(by.css('button'));
+    return element.all(by.css('app-players button'));
   }
 
   getEditPlayerButton() {
@@ -97,6 +97,50 @@ export class AppPage {
 
   getFindPlayerButton() {
     return element.all(by.className('findButton'));
+  }
+
+  getAddPlayerTitleText() {
+    return element(by.css('app-player-add h2')).getText() as Promise<string>;
+  }
+
+  getAddPlayerInputs() {
+    return element.all(by.css('input'));
+  }
+
+  getAddPlayerFirstNameInput() {
+    return element(by.css("input[formControlName=firstName]"));
+  }
+
+  getAddPlayerLastNameInput() {
+    return element(by.css("input[formControlName=lastName]"));
+  }
+
+  getAddPlayerNickNameInput() {
+    return element(by.css("input[formControlName=nickname]"));
+  }
+
+  getAddPlayerEmailInput() {
+    return element(by.css("input[formControlName=email]"));
+  }
+
+  getAddPlayerPhoneInput() {
+    return element(by.css("input[formControlName=phone]"));
+  }
+
+  getAddPlayerAgeInput() {
+    return element(by.css("input[formControlName=age]"));
+  }
+
+  getAddPlayerHandicapInput() {
+    return element(by.css("input[formControlName=handicap]"));
+  }
+
+  getAddPlayerLeagueInput() {
+    return element(by.css("input[formControlName=league]"));
+  }
+
+  getAddPlayerAlert() {
+    return element(by.className('alert alert-danger'));
   }
 
 }
