@@ -2,7 +2,7 @@ import {Team} from './teams/team';
 
 export const Teams: Team[] = [
     { 
-        id: 1, 
+        id: "1", 
         name: 'Team One', 
         record: '3-0',
         league: 'One',
@@ -20,7 +20,7 @@ export const Teams: Team[] = [
             }]
     },
     {
-        id: 2,
+        id: "2",
         name: 'Team Two',
         record: '2-2',
         league: 'One',
@@ -39,14 +39,14 @@ export const Teams: Team[] = [
         ]
     },
     {
-        id: 3,
+        id: "3",
         name: 'Team Three',
         record: '0-4',
         league: 'Two',
         players: null
     },
     {
-        id: 4,
+        id: "4",
         name: 'Team Four',
         record: '1-3',
         league: 'Two',

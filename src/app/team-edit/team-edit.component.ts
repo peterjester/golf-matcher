@@ -13,7 +13,7 @@ import {Router, NavigationExtras} from "@angular/router";
 
 export class TeamEditComponent implements OnInit {
 
-  public id: number;
+  public id: string;
   public name: string;
   public record: string;
   public league: string;
