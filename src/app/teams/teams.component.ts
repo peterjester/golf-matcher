@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/co
 import {TeamService} from '../team.service';
 import { Team } from './team';
 import {Router, NavigationExtras} from "@angular/router";
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-teams',
@@ -13,23 +14,28 @@ export class TeamsComponent implements OnInit {
   teams: Team[];
  
   selectedTeam : Team;
+  findTeam: string;
+  teamNotFound: boolean;
 
-  @ViewChild('teams', {static: false}) list: ElementRef;
+  // @ViewChild('teams', {static: false}) list: ElementRef;
+  @ViewChild(CdkVirtualScrollViewport,null)
+  viewport: CdkVirtualScrollViewport;
 
   constructor(private teamService : TeamService,
               private renderer: Renderer2,
               private router: Router) {
-    this.renderer.listen('window', 'click',(e:Event)=>{
-      console.log("teams: got click event");
-      let elementId: string = (event.target as Element).id;
-      let className: string = (event.target as Element).className; 
-      console.log("teams: elementId="+elementId);
-      console.log("teams: className="+className);
-      if (className !== "selected")
-      {
-        this.selectedTeam=null;
-      }
-    });
+    // this.renderer.listen('window', 'click',(e:Event)=>{
+    //   // console.log("teams: got click event");
+    //   let elementId: string = (event.target as Element).id;
+    //   let className: string = (event.target as Element).className; 
+    //   // console.log("teams: elementId="+elementId);
+    //   // console.log("teams: className="+className);
+    //   if (className !== "selected")
+    //   {
+    //     this.selectedTeam=null;
+    //   } 
+    // });
+    this.teamNotFound = false;
   }
 
   ngOnInit() {
@@ -70,6 +76,30 @@ export class TeamsComponent implements OnInit {
       }
     };
     this.router.navigate(["editteam"], navigationExtras);
+  }
+
+  onFind() {
+    console.log("teams onFind findTeam="+this.findTeam);
+    this.teamNotFound = false;
+    let matchFound: boolean;
+    matchFound = false;
+    for( var i = 0; i < this.teams.length; i++){ 
+      console.log("teams comparing teams[i].name: "+this.teams[i].name+" to findTeam:"+this.findTeam);
+      if ( this.teams[i].name.includes(this.findTeam)) {
+        console.log("teams onFind found match for "+this.findTeam+" in item "+i);
+        matchFound = true;
+        this.viewport.scrollToIndex(i);
+      }
+    }
+    if (false == matchFound)
+    {
+      this.teamNotFound = true;
+    }
+  }
+
+  findByNameFocus() {
+    console.log("teams findByNameFocus");
+    this.teamNotFound = false;
   }
 
 }

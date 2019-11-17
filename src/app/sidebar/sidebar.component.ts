@@ -17,11 +17,11 @@ export class SidebarComponent implements OnInit {
   }
 
   get opened() : boolean {
-    return this._opened
+    return this._opened;
   }
 
   set opened(opened) {
-    this.opened = opened;
+    this._opened = opened;
   }
   ngOnInit() {
   }
