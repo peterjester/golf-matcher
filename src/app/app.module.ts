@@ -27,6 +27,7 @@ import { TeamEditComponent } from './team-edit/team-edit.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { DemoMaterialModule } from './leaderboard/mat-material';
+import { HandicapComponent } from './handicap/handicap.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DemoMaterialModule } from './leaderboard/mat-material';
     ScoresComponent,
     TeamAddComponent,
     TeamEditComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    HandicapComponent
   ],
   imports: [
     FormsModule,
