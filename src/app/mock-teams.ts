@@ -14,7 +14,7 @@ export const Teams: Team[] = [
                 email: 'wag945@psu.edu',
                 phone: '1234567890',
                 age: 39,
-                handicap: 14,
+                handicap: "2.1",
                 league: 'one',
                 scores: [36]
             }]
@@ -32,7 +32,7 @@ export const Teams: Team[] = [
                 email: 'peter.jester@gmail.com',
                 phone: '1234567890',
                 age: 25,
-                handicap: 18,
+                handicap: "1.4",
                 league: 'one',
                 scores: [45]
             }        

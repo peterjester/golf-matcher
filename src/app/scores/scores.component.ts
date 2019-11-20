@@ -29,7 +29,7 @@
 //         .subscribe(players => this.players = players);
 //   }  
 //   selectedPlayer: Player;
-  
+
 //   onSelect(player: Player): void {
 //     this.selectedPlayer = player;
 //     console.log('selected player: '+this.selectedPlayer.name);
@@ -64,22 +64,22 @@ import { DxDataGridModule, DxTemplateModule } from 'devextreme-angular';
 //     // providers: [Service]
 // })
 export class ScoresComponent implements OnInit {
-    players: Player[];
+  players: Player[];
 
-    selectTextOnEditStart;
-    startEditAction;
+  selectTextOnEditStart;
+  startEditAction;
 
-    // constructor(service: Service) {
-    //     this.players = service.getCountries();
-    // }
-    constructor(private playerService : PlayerService) {
-     }
+  // constructor(service: Service) {
+  //     this.players = service.getCountries();
+  // }
+  constructor(private playerService: PlayerService) {
+  }
 
   getPlayers(): void {
     this.playerService.getPlayers()
-        .subscribe(players => this.players = players);
-  }  
-      ngOnInit() {
+      .subscribe(players => this.players = players);
+  }
+  ngOnInit() {
     this.getPlayers();
   }
 }
