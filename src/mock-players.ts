@@ -9,7 +9,7 @@ export const Players: Player[] = [
         email: 'wag945@psu.edu',
         phone: '1234567890',
         age: 39,
-        handicap: 14,
+        handicap: "14",
         league: 'one',
         scores: [36]
     },
@@ -20,7 +20,7 @@ export const Players: Player[] = [
         email: 'peter.jester@gmail.com',
         phone: '1234567890',
         age: 25,
-        handicap: 18,
+        handicap: "18",
         league: 'one',
         scores: [45]
     },
@@ -31,7 +31,7 @@ export const Players: Player[] = [
         email: 'craig.roland@gmail.com',
         phone: '2345678901',
         age: 25,
-        handicap: 4,
+        handicap: "4",
         league: 'one',
         scores: [35]
     },
@@ -42,7 +42,7 @@ export const Players: Player[] = [
         email: 'dan.castellucci@gmail.com',
         phone: '3456789012',
         age: 25,
-        handicap: 15,
+        handicap: "15",
         league: 'one',
         scores: [43]
     }

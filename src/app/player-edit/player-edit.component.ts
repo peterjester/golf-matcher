@@ -17,7 +17,7 @@ export class PlayerEditComponent implements OnInit {
   public email: string;
   public phone: string;
   public age: number;
-  public handicap: number;
+  public handicap: string;
   public league: string;
   public scores: number[];
   public editedPlayer: Player;
