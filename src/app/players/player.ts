@@ -5,7 +5,7 @@ export class Player {
     email: string;
     phone: string;
     age: number;
-    handicap: number;
+    handicap: string;
     league: string;
     scores: number[];
 }

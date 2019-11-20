@@ -1,10 +1,10 @@
-export default class HandicapCalculator {
+export class HandicapCalculator {
 
     /**
      * @brief Handicap Differential = (Adjusted Gross Score - Course Rating) X 113 ÷ Slope Rating
      * @param scores 
      */
-    static calculateHandicapForPlayer(scores: number[]) {
+    static calculateHandicapForScores(scores: number[]) : number {
 
         // constants for our given course
         const numberToAverage = 5; 

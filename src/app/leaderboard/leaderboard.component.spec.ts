@@ -4,6 +4,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { LeaderboardComponent } from './leaderboard.component';
 import { Players } from 'src/mock-players';
 import { of } from 'rxjs';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 const data = of(
@@ -36,7 +37,7 @@ describe('LeaderboardComponent', () => {
         PlayerService,
         { provide: AngularFirestore, useValue: angularFirestoreStub }
       ],
-      schemas: []
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
     }));
@@ -51,10 +52,10 @@ describe('LeaderboardComponent', () => {
    * Temporarily disabling until a better solution is found
    * Bug where when these are uncommented, error is caused by Auth component
    */
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
-  // it ('Test LeaderboardComponent name',() => {
-  //   expect(fixture).name === "LeaderboardComponent";
-  //  });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  it ('Test LeaderboardComponent name',() => {
+    expect(fixture).name === "LeaderboardComponent";
+   });
 });
