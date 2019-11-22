@@ -143,4 +143,40 @@ export class AppPage {
     return element(by.className('alert alert-danger'));
   }
 
+  getEditPlayerTitleText() {
+    return element(by.css('app-player-edit h2')).getText() as Promise<string>;
+  }
+
+  getEditPlayerInputs() {
+    return element.all(by.css('input'));
+  }
+
+  getEditPlayerNameInput() {
+    return element(by.css('[placeholder = "name"]'));
+  }
+
+  getEditPlayerNicknameInput() {
+    return element(by.css('[placeholder = "nickname"]'));
+  }
+
+  getEditPlayerEmailInput() {
+    return element(by.css('[placeholder = "email"]'));
+  }
+
+  getEditPlayerPhoneInput() {
+    return element(by.css('[placeholder = "phone"]'));
+  }
+
+  getEditPlayerAgeInput() {
+    return element(by.css('[placeholder = "age"]'));
+  }
+
+  getEditPlayerHandicapInput() {
+    return element(by.css('[placeholder = "handicap"]'));
+  }
+
+  getEditPlayerLeagueInput() {
+    return element(by.css('[placeholder = "league"]'));
+  }
+
 }
