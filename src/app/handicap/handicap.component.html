@@ -1,0 +1,14 @@
+<br>
+<div class="tablediv">
+<table matSort class="mat-table">
+    <tr class="mat-header-row">
+      <th mat-sort-header="name" class="mat-header-cell">Name</th>
+      <th mat-sort-header="handicap" class="mat-header-cell">Handicap</th>
+    </tr>
+  
+    <tr *ngFor="let player of players" class="mat-row">
+      <td class="mat-cell" :last-child>{{player.name}}</td>
+      <td class="mat-cell" :last-child>{{player.handicap}}</td>
+    </tr>
+  </table>
+  </div>
