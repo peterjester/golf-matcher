@@ -297,6 +297,102 @@ describe('workspace-project App', () => {
     });
   });
 
+  //Teams page
+  it ('should display teams title',() => {
+    page.navigateToLocation('/teams');
+    expect(page.getTeamsText()).toEqual('Teams');
+  });
+
+  it('add team button should exist',() => {
+    page.navigateToLocation('/teams');
+    browser.waitForAngular().then( function() {
+      page.getAddTeamButton().count().then(function(count) {
+        expect(count >= 1);
+      });  
+    });
+  });
+
+  it('edit team button should exist',() => {
+    page.navigateToLocation('/teams');
+    browser.waitForAngular().then( function() {
+      page.getEditTeamButton().count().then(function(count) {
+        expect(count >= 1);
+        });
+      });
+  });
+
+  it('delete team button should exist',() => {
+    page.navigateToLocation('/teams');
+    browser.waitForAngular().then( function() {
+      page.getDeleteTeamButton().count().then(function(count) {
+        expect(count >= 1);
+        });
+      });
+  });
+
+  it('find team button should exist',() => {
+    page.navigateToLocation('/teams');
+    browser.waitForAngular().then( function() {
+      page.getFindTeamButton().count().then(function(count) {
+        expect(count >= 1);
+        });
+      });
+  });
+
+  //Add Team Page
+  it('should display add team title',() => {
+    page.navigateToLocation('addteam');
+    expect(page.getAddTeamTitleText()).toEqual('Add Team');
+  });
+
+  it('add team input fields should exist',() => {
+    page.navigateToLocation('/addteam');
+    browser.waitForAngular().then( function() {
+      page.getAddTeamInputs().count().then(function(count) {
+        expect(count >= 8);
+        });
+      });
+  });
+
+  it('add team name takes input',() => {
+    page.navigateToLocation('/addteam');
+    browser.waitForAngular().then( function() {
+      page.getAddTeamNameInput().sendKeys("Team Name");
+      page.getAddTeamNameInput().getText().then(function(text){
+        expect(text == "Team Name");
+      });
+    });
+  });
+
+  it('add team record takes input',() => {
+    page.navigateToLocation('/addteam');
+    browser.waitForAngular().then( function() {
+      page.getAddTeamRecordInput().sendKeys("2-0");
+      page.getAddTeamRecordInput().getText().then(function(text){
+        expect(text == "2-0");
+      });
+    });
+  });
+
+  it('add team league takes input',() => {
+    page.navigateToLocation('/addteam');
+    browser.waitForAngular().then( function() {
+      page.getAddTeamLeagueInput().sendKeys("My League");
+      page.getAddTeamLeagueInput().getText().then(function(text){
+        expect(text == "My League");
+      });
+    });
+  });
+
+  it('submit team button should exist',() => {
+    page.navigateToLocation('/addteam');
+    browser.waitForAngular().then( function() {
+      page.getSubmitTeamButton().count().then(function(count) {
+        expect(count >= 1);
+        });
+      });
+  });
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);

@@ -179,4 +179,48 @@ export class AppPage {
     return element(by.css('[placeholder = "league"]'));
   }
 
+  getTeamsText() {
+    return element(by.css('app-teams .header')).getText() as Promise<string>;
+  }
+
+  getAddTeamButton() {
+    return element.all(by.css('app-teams button'));
+  }
+
+  getEditTeamButton() {
+    return element.all(by.className('editTeamButton'));
+  }
+
+  getDeleteTeamButton() {
+    return element.all(by.className('deleteTeamButton'));
+  }
+
+  getFindTeamButton() {
+    return element.all(by.className('findButton'));
+  }
+
+  getAddTeamTitleText() {
+    return element(by.css('app-team-add h2')).getText() as Promise<string>;
+  }
+
+  getAddTeamInputs() {
+    return element.all(by.css('input'));
+  }
+
+  getAddTeamNameInput() {
+    return element(by.css("input[formControlName=name]"));
+  }
+
+  getAddTeamRecordInput() {
+    return element(by.css("input[formControlName=record]"));
+  }
+
+  getAddTeamLeagueInput() {
+    return element(by.css("input[formControlName=league]"));
+  }
+
+  getSubmitTeamButton() {
+    return element.all(by.className('submitButton'));
+  }
+
 }
