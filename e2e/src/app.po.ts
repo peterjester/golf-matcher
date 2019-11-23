@@ -223,4 +223,24 @@ export class AppPage {
     return element.all(by.className('submitButton'));
   }
 
+  getEditTeamTitleText() {
+    return element(by.css('app-team-edit h2')).getText() as Promise<string>;
+  }
+
+  getEditTeamInputs() {
+    return element.all(by.css('input'));
+  }
+
+  getEditTeamNameInput() {
+    return element(by.css('[placeholder = "name"]'));
+  }
+
+  getEditTeamRecordInput() {
+    return element(by.css('[placeholder = "record"]'));
+  }
+
+  getEditTeamLeagueInput() {
+    return element(by.css('[placeholder = "league"]'));
+  }
+
 }
