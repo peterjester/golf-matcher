@@ -38,7 +38,7 @@ export class HandicapComponent implements OnInit {
   calculateHandicap(): void {
     for(let player of this.players) {
       const tempHandicap : number =  HandicapCalculator.calculateHandicapForScores(player.scores);
-      player.handicap = Number(tempHandicap).toFixed(1);
+      player.handicap = Number(tempHandicap).toFixed(0);
       this.playerService.updatePlayer(player);
     }
   }
