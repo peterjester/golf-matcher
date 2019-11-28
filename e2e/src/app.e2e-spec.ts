@@ -447,6 +447,43 @@ describe('workspace-project App', () => {
       });
   });
 
+  //Leaderboard
+  it('leaderboard header(0) is name',() => {
+    page.navigateToLocation('/leaderboard');
+    browser.waitForAngular().then( function() {
+      page.getLeaderboardFirstHeader().then(function(header) {
+        expect("Name" == header);
+      });
+    });
+  });
+
+  it('leaderboard header(1) is age',() => {
+    page.navigateToLocation('/leaderboard');
+    browser.waitForAngular().then( function() {
+      page.getLeaderboardFirstHeader().then(function(header) {
+        expect("Age" == header);
+      });
+    });
+  });
+
+  it('leaderboard header(2) is handicap',() => {
+    page.navigateToLocation('/leaderboard');
+    browser.waitForAngular().then( function() {
+      page.getLeaderboardFirstHeader().then(function(header) {
+        expect("Handicap" == header);
+      });
+    });
+  });
+
+  it('leaderboard header(3) is league',() => {
+    page.navigateToLocation('/leaderboard');
+    browser.waitForAngular().then( function() {
+      page.getLeaderboardFirstHeader().then(function(header) {
+        expect("League" == header);
+      });
+    });
+  });
+
   afterEach(async () => {
       // Assert that there are no errors emitted from the browser
       const logs = await browser.manage().logs().get(logging.Type.BROWSER);

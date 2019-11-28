@@ -1,6 +1,5 @@
 import { Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { Player } from './player';
-// import { Players} from '../mock-players';
 import {Players} from '../../mock-players';
 import { PlayerService } from '../player.service';
 import {Router, NavigationExtras} from "@angular/router";
@@ -25,24 +24,12 @@ export class PlayersComponent implements OnInit {
               private renderer: Renderer2,
               private router: Router) { 
 
-      // this.renderer.listen('window', 'click',(e:Event)=>{
-      //   console.log("players: got click event");
-      //   let elementId: string = (event.target as Element).id;
-      //   let className: string = (event.target as Element).className; 
-      //   console.log("players: elementId="+elementId);
-      //   console.log("players: className="+className);
-      //   if (className !== "selected")
-      //   {
-      //     this.selectedPlayer=null;
-      //   }
-      // });
       this.playerNotFound = false;
   }
        
     getPlayers(): void {
         this.playerService.getPlayers()
         .subscribe(players => {
-          // console.log("players getPlayers subscribe returned");
           this.players = players;
           this.router.navigateByUrl('/players');
         });
@@ -50,7 +37,6 @@ export class PlayersComponent implements OnInit {
     selectedPlayer: Player;
   
     onSelect(player: Player): void {
-      // console.log("Players onSelect");
       this.selectedPlayer = player;
     }
 
@@ -60,12 +46,6 @@ export class PlayersComponent implements OnInit {
     }
 
     onDelete() {
-      // console.log("players onDelete selectedPlayer:"+this.selectedPlayer.name);
-      // for( var i = 0; i < this.players.length; i++){ 
-      //   if ( this.players[i] === this.selectedPlayer) {
-      //     this.players.splice(i, 1); 
-      //   }
-      // }
       if(confirm("Are you sure you want to delete")) {
         this.playerService.deletePlayer(this.selectedPlayer);
       }
@@ -73,13 +53,10 @@ export class PlayersComponent implements OnInit {
     }
 
     onAdd() {
-      // console.log("players onAdd");
       this.router.navigateByUrl('/addplayer');
     }
 
     onEdit() {
-      // console.log("players onEdit");
-      // this.router.navigateByUrl('editplayer');
       let navigationExtras: NavigationExtras = {
         queryParams: {
             "id": this.selectedPlayer.id,
@@ -97,13 +74,11 @@ export class PlayersComponent implements OnInit {
     }
 
     onFind() {
-      // console.log("players onFind findPlayer="+this.findPlayer);
       this.playerNotFound = false;
       let matchFound: boolean;
       matchFound = false;
       for( var i = 0; i < this.players.length; i++){ 
         if ( this.players[i].name.includes(this.findPlayer)) {
-          // console.log("players onFind found match for "+this.findPlayer+" in item "+i);
           matchFound = true;
           this.viewport.scrollToIndex(i);
         }
@@ -115,7 +90,6 @@ export class PlayersComponent implements OnInit {
     }
 
     findByNameFocus() {
-      // console.log("players findByNameFocus");
       this.playerNotFound = false;
     }
 }

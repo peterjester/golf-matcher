@@ -243,4 +243,35 @@ export class AppPage {
     return element(by.css('[placeholder = "league"]'));
   }
 
+  getLeaderboardFirstHeader() {
+    // get rows 
+    var row = element.all(by.className("mat-header-row")).first();    
+    // get cell values
+    var cells = row.all(by.className("mat-header-cell"));
+    return cells.get(0).getText() as Promise<string>;
+  }    
+
+  getLeaderboardSecondHeader() {
+    // get rows 
+    var row = element.all(by.className("mat-header-row")).first();    
+    // get cell values
+    var cells = row.all(by.className("mat-header-cell"));
+    return cells.get(1).getText() as Promise<string>;
+  }
+
+  getLeaderboardThirdHeader() {
+    // get rows 
+    var row = element.all(by.className("mat-header-row")).first();    
+    // get cell values
+    var cells = row.all(by.className("mat-header-cell"));
+    return cells.get(2).getText() as Promise<string>;
+  }    
+  
+  getLeaderboardFourthHeader() {
+    // get rows 
+    var row = element.all(by.className("mat-header-row")).first();    
+    // get cell values
+    var cells = row.all(by.className("mat-header-cell"));
+    return cells.get(3).getText() as Promise<string>;
+  }    
 }

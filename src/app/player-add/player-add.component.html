@@ -5,7 +5,6 @@
         <label>
             First Name:
             <input type="text" formControlName="firstName" name="firstName" required maxlength="12">
-            <!-- <input type="text" id="firstName" class="form-control" formControlName="firstName" required> -->
         </label>    
         <div *ngIf="angForm.controls['firstName'].invalid && (angForm.controls['firstName'].dirty || angForm.controls['firstName'].touched)" class="alert alert-danger">
                 <div *ngIf="angForm.controls['firstName'].errors.required">
