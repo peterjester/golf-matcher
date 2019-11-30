@@ -243,6 +243,12 @@ export class AppPage {
     return element(by.css('[placeholder = "league"]'));
   }
 
+  getLeaderboardHeaderRows() {
+    var row = element.all(by.className("mat-header-row"));
+
+    return row.count();
+  }
+
   getLeaderboardFirstHeader() {
     // get rows 
     var row = element.all(by.className("mat-header-row")).first();    
