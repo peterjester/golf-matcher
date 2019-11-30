@@ -34,19 +34,6 @@ input[type=submit] {
     border-radius: 5px; 
 }
 
-/* div {
-    display: table-cell;
-    vertical-align: middle;
-    height: 50px;
-    border: 1px solid red;
-} */
-
-/* div {
-    height: 100%;
-    display: table-cell; 
-    vertical-align: middle;
-} */
-
 button {
     /* background: #0066A2;    */
     background: rgb(13,85,7); 

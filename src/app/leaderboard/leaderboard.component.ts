@@ -26,9 +26,11 @@ export class LeaderboardComponent implements OnInit {
       this.sortedData = players;
     });
   }
+
   compare(a: number | string, b: number | string, isAsc: boolean) {
     return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
   }
+  
   sortData(sort: Sort) {
     const data = this.players;
     if (!sort.active || sort.direction === '') {

@@ -1,4 +1,3 @@
-<app-sidebar></app-sidebar>
 <br>
 <!-- <div style="background:url('./assets/golf-image.jpg') no-repeat 0px 0px;"> -->
 <div>
@@ -19,10 +18,10 @@
                 <button (click)="onAdd()">Add Team</button>
         </div>
         <div class="editbutton">
-                <button (click)="onEdit()" [disabled]="!selectedTeam">Edit Team</button>
+                <button (click)="onEdit()" [disabled]="!selectedTeam" class="editTeamButton">Edit Team</button>
         </div>
         <div class="deletebutton">
-                        <button type="submit" (click)="onDelete()" [disabled]="!selectedTeam">Delete Team</button>
+                        <button type="submit" (click)="onDelete()" [disabled]="!selectedTeam" class="deleteTeamButton">Delete Team</button>
         </div>
         <div class="findByName">
                 <label class="findByNameLabel">Find By Name:

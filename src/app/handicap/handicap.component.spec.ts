@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { PlayerService } from '../player.service';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { LeaderboardComponent } from './leaderboard.component';
-import { Players } from 'src/mock-players';
 import { of } from 'rxjs';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+import { HandicapComponent } from './handicap.component';
+import { PlayerService } from '../player.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Players } from 'src/mock-players';
 
 const data = of(
   [
@@ -23,16 +23,13 @@ const collectionStub = {
 const angularFirestoreStub = {
   collection: jasmine.createSpy('collection').and.returnValue(collectionStub)
 }
-
-describe('LeaderboardComponent', () => {
-  let component: LeaderboardComponent;
-  let fixture: ComponentFixture<LeaderboardComponent>;
+describe('HandicapComponent', () => {
+  let component: HandicapComponent;
+  let fixture: ComponentFixture<HandicapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeaderboardComponent ],
-      imports: [
-      ],
+      declarations: [ HandicapComponent ],
       providers: [
         PlayerService,
         { provide: AngularFirestore, useValue: angularFirestoreStub }
@@ -40,22 +37,15 @@ describe('LeaderboardComponent', () => {
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
-    }));
+  }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(LeaderboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  // beforeEach(() => {
+  //   fixture = TestBed.createComponent(HandicapComponent);
+  //   component = fixture.componentInstance;
+  //   fixture.detectChanges();
+  // });
 
-  /**
-   * Temporarily disabling until a better solution is found
-   * Bug where when these are uncommented, error is caused by Auth component
-   */
   // it('should create', () => {
   //   expect(component).toBeTruthy();
   // });
-  // it ('Test LeaderboardComponent name',() => {
-  //   expect(fixture).name === "LeaderboardComponent";
-  //  });
 });

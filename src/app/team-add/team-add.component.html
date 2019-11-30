@@ -1,4 +1,3 @@
-<app-sidebar></app-sidebar>
 <h2 class="header">Add Team</h2>
 <form [formGroup]="angForm" (ngSubmit)="onSubmit()" class="grid-container">       
     <div class="grid-item">
@@ -38,6 +37,6 @@
         </div>
     </div>
     <div class="buttonWrapper">
-        <button type="submit" [disabled]="!angForm.valid">Submit</button>
+        <button type="submit" [disabled]="!angForm.valid" class="submitButton">Submit</button>
     </div>
 </form>
