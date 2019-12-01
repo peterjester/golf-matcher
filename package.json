@@ -39,7 +39,7 @@
     "jszip": "^3.2.2",
     "ng-sidebar": "^9.1.1",
     "ngx-auth-firebaseui": "^3.4.2",
-    "npm-install-peers": "^1.2.1",
+    "protractor-jasmine2-html-reporter": "0.0.7",
     "rxjs": "~6.5.3",
     "selenium-webdriver": "^4.0.0-alpha.5",
     "tslib": "^1.9.0",
@@ -64,7 +64,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.4.0",
+    "protractor": "^5.4.2",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.5.3"

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { EventSettingsModel, DayService, WeekService, MonthService } from '@syncfusion/ej2-angular-schedule';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 import { scheduleData } from '../mock-schedule';
-import { ScheduleService } from '../schedule.service';
+// import { ScheduleService } from '../schedule.service';
 import { Appointment } from './schedule';
 
 @Component({
