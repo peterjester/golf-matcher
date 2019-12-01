@@ -29,6 +29,9 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { DemoMaterialModule } from './leaderboard/mat-material';
 import { HandicapComponent } from './handicap/handicap.component';
 
+import { ScheduleComponent } from './schedule/schedule.component';
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,8 @@ import { HandicapComponent } from './handicap/handicap.component';
     TeamAddComponent,
     TeamEditComponent,
     LeaderboardComponent,
-    HandicapComponent
+    HandicapComponent,
+    ScheduleComponent
   ],
   imports: [
     FormsModule,
@@ -66,6 +70,7 @@ import { HandicapComponent } from './handicap/handicap.component';
     SidebarModule,
     ScrollingModule,
     DemoMaterialModule,
+    ScheduleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
