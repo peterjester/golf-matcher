@@ -34,6 +34,9 @@ exports.config = {
     jasmine.getEnv().addReporter(
         new Jasmine2HtmlReporter({
             savePath: 'target/screenshots', // put your destination file
+            displayFailuresSummary: true,
+            displayFailedSpec: true,
+            displaySuiteNumber: true,
         })
     );
 
