@@ -11,6 +11,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { TeamEditComponent } from './team-edit/team-edit.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { HandicapComponent } from './handicap/handicap.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'editteam', component: TeamEditComponent},
   { path: 'scores', component: ScoresComponent},
   { path: 'leaderboard', component: LeaderboardComponent },
-  { path: 'handicaps', component: HandicapComponent }
+  { path: 'handicaps', component: HandicapComponent },
+  { path: 'schedule', component: ScheduleComponent }
 ];
 
 @NgModule({
