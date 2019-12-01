@@ -8,6 +8,7 @@ branches:
   - master
 before_script:
 - npm install -g @angular/cli
+- export NODE_OPTIONS=–max_old_space_size=8192
 script:
 - ng build --prod --base-href https://peterjester.github.io/golf-matcher
 - npm run test-headless
