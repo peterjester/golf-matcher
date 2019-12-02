@@ -107,6 +107,7 @@ button[disabled]{
 .editscorebutton {
   width: 100px;
   float: left;
+  background-color: rgb(92, 50, 100);
 }
 
 .deletescorebutton {
