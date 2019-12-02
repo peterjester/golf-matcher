@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlayersComponent } from './players/players.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { PlayerEditComponent }  from './player-edit/player-edit.component';
+import { ScoresEditComponent } from './scores-edit/scores-edit.component';
 import { PlayerAddComponent } from './player-add/player-add.component';
 import { TeamsComponent } from './teams/teams.component';
 import { TeamAddComponent } from './team-add/team-add.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'players', component: PlayersComponent },
   { path: '',  component: AuthenticationComponent },
   { path: 'editplayer', component: PlayerEditComponent },
+  { path: 'editscores', component: ScoresEditComponent },
   { path: 'addplayer', component: PlayerAddComponent},
   { path: 'teams', component: TeamsComponent},
   { path: 'addteam', component: TeamAddComponent},
