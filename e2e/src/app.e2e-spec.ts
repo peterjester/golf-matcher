@@ -2,6 +2,7 @@ import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 import { TestBed } from '@angular/core/testing';
 import {SidebarComponent} from '../../src/app/sidebar/sidebar.component';
+import { MatExpansionPanelActionRow } from '@angular/material';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -448,6 +449,13 @@ describe('workspace-project App', () => {
   });
 
   //Leaderboard
+  it('leaderboard table should have multiple rows',() => {
+    page.navigateToLocation('/leaderboard');
+    page.getLeaderboardHeaderRows().then(function(count){
+      expect(count >= 2);
+    })
+  });
+
   it('leaderboard header(0) is name',() => {
     page.navigateToLocation('/leaderboard');
     browser.waitForAngular().then( function() {

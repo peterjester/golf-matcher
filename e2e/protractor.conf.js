@@ -1,7 +1,13 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
+var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 const { SpecReporter } = require('jasmine-spec-reporter');
+var reporter = new Jasmine2HtmlReporter({
+  baseDirectory: './protractor-result', // a location to store screen shots.
+  docTitle: 'Protractor Demo Reporter',
+  docName: 'protractor-demo-tests-report.html'
+});
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -23,6 +29,21 @@ exports.config = {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
-  }
+    // jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    browser.driver.manage().window().maximize();
+    jasmine.getEnv().addReporter(
+        new Jasmine2HtmlReporter({
+            savePath: 'target/screenshots', // put your destination file
+        })
+    );
+
+    jasmine.getEnv().addReporter(new SpecReporter({
+        displayFailuresSummary: true,
+        displayFailedSpec: true,
+        displaySuiteNumber: true,
+        displaySpecDuration: true
+    }));
+
+    jasmine.getEnv().addReporter(reporter);
+  },
 };
