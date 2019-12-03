@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ScoresComponent } from './scores/scores.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerAddComponent } from './player-add/player-add.component';
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
+import { ScoresEditComponent } from './scores-edit/scores-edit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DxDataGridModule, DxTemplateModule } from 'devextreme-angular';
 
@@ -39,11 +39,11 @@ import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
     PlayersComponent,
     PlayerAddComponent,
     PlayerEditComponent,
+    ScoresEditComponent,
     DashboardComponent,
     TeamsComponent,
     SidebarComponent,
     TeamsComponent,
-    ScoresComponent,
     TeamAddComponent,
     TeamEditComponent,
     LeaderboardComponent,
@@ -58,7 +58,6 @@ import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
     DxDataGridModule,
     DxTemplateModule,
     RouterModule.forRoot([
-      { path: 'scores', component: ScoresComponent },
       { path: 'test', component: PlayerEditComponent },
       { path: 'players', component: PlayersComponent },
     ]),

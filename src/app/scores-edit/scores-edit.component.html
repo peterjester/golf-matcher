@@ -1,0 +1,31 @@
+<div class="grid-container">
+    <br>
+    <h2 class="header">Scores Edit</h2>
+    <div class="grid-item"> 
+        <label>Name:
+            <input type="text" [(ngModel)]="name" placeholder="name" readonly/>
+        </label>
+    </div>
+    <div class="grid-item">
+        <label>Nickname:
+            <input [(ngModel)]="nickname" placeholder="nickname" readonly/>
+        </label>
+    </div>
+    <div class="grid-item"> 
+        <label>Handicap:
+            <input [(ngModel)]="handicap" placeholder="handicap" readonly/>
+        </label>
+    </div>
+    <div class="grid-item"> 
+        <label>League:
+            <input [(ngModel)]="league" placeholder="league" readonly/>
+        </label>
+    <div class="grid-item"> 
+        <label>Scores:
+            <input [(ngModel)]="scores" placeholder="scores"/>
+        </label>
+    </div>
+    <div class="buttonWrapper">
+        <button type="submit" (click)="onSubmit()">Submit</button>
+    </div>
+</div>
