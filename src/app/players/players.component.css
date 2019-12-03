@@ -86,21 +86,33 @@ button[disabled]{
 }
 
 .addbutton {
-  width: 50px;
+  width: 100px;
   float: left;
-  margin: 25px;
 }
 
 .editbutton {
-  width: 50px;
+  width: 100px;
   float: left;
-  margin: 25px;
 }
 
 .deletebutton {
-  width: 50px;
+  width: 100px;
   float: left;
-  margin: 25px;
+}
+.addscorebutton {
+  width: 100px;
+  float: bottom;
+}
+
+.editscorebutton {
+  width: 100px;
+  float: left;
+  background-color: rgb(92, 50, 100);
+}
+
+.deletescorebutton {
+  width: 100px;
+  float: left;
 }
 
 .findByName {

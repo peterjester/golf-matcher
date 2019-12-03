@@ -73,6 +73,23 @@ export class PlayersComponent implements OnInit {
       this.router.navigate(["editplayer"], navigationExtras);
     }
 
+    onScoreEdit() {
+      let navigationExtras: NavigationExtras = {
+        queryParams: {
+          "id": this.selectedPlayer.id,
+          "name": this.selectedPlayer.name,
+          "nickname": this.selectedPlayer.nickname,
+          "email": this.selectedPlayer.email,
+          "phone": this.selectedPlayer.phone,
+          "age": this.selectedPlayer.age,
+          "handicap": this.selectedPlayer.handicap,
+          "league": this.selectedPlayer.league,
+          "scores": this.selectedPlayer.scores
+        }
+      };
+      this.router.navigate(["editscores"], navigationExtras);
+    }
+
     onFind() {
       this.playerNotFound = false;
       let matchFound: boolean;

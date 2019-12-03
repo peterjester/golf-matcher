@@ -5,11 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import {Router, NavigationExtras} from "@angular/router";
 
 @Component({
-  selector: 'app-player-edit',
-  templateUrl: './player-edit.component.html',
-  styleUrls: ['./player-edit.component.css']
+  selector: 'app-scores-edit',
+  templateUrl: './scores-edit.component.html',
+  styleUrls: ['./scores-edit.component.css']
 })
-export class PlayerEditComponent implements OnInit {
+export class ScoresEditComponent implements OnInit {
 
   public id?: string;
   public name: string;
@@ -26,10 +26,10 @@ export class PlayerEditComponent implements OnInit {
                       private router: Router,
                       private playerService : PlayerService) {
     this.route.queryParams.subscribe(params => {
-      console.log("PlayerEditComponent params[id]:"+params["id"]);
-      console.log("PlayerEditComponent params[name]: "+params["name"]);
-      console.log("PlayerEditComponent params[nickname]: "+params["nickname"]);
-      console.log("PlayerEditComponent params[email]: "+params["email"]);
+      console.log("scoresEditComponent params[id]:"+params["id"]);
+      console.log("scoresEditComponent params[name]: "+params["name"]);
+      console.log("scoresEditComponent params[nickname]: "+params["nickname"]);
+      console.log("scoresEditComponent params[email]: "+params["email"]);
       this.id = params["id"];
       this.name = params["name"];
       this.nickname = params["nickname"];
@@ -39,9 +39,9 @@ export class PlayerEditComponent implements OnInit {
       this.handicap = params["handicap"];
       this.league = params["league"];
       this.scores = params["scores"];
-      console.log("PlayerEditComponent this.id: "+this.id);
-      console.log("PlayerEditComponent this.name: "+this.name);
-      console.log("PlayerEditComponent this.scores.length: "+this.scores.length);
+      console.log("scoresEditComponent this.id: "+this.id);
+      console.log("scoresEditComponent this.name: "+this.name);
+      console.log("scoresEditComponent this.scores.length: "+this.scores.length);
     });
   }
 
@@ -49,9 +49,9 @@ export class PlayerEditComponent implements OnInit {
   }  
 
   onSubmit() {
-    console.log("PlayerEditComponent submit pressed");
-    console.log("PlayerEditComponent this.id: "+this.id);
-    console.log("PlayerEditComponent this.name: "+this.name);
+    console.log("scoresEditComponent submit pressed");
+    console.log("scoresEditComponent this.id: "+this.id);
+    console.log("scoresEditComponent this.name: "+this.name);
       this.playerService.updatePlayer( {
       id: this.id,
       name: this.name, 
