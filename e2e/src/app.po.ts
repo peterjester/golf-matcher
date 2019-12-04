@@ -280,4 +280,18 @@ export class AppPage {
     var cells = row.all(by.className("mat-header-cell"));
     return cells.get(3).getText() as Promise<string>;
   }    
+
+  getHandicapHeaderRows() {
+    var row = element.all(by.className("mat-header-row"));
+    return row.count();
+  }
+
+  getHandicapFirstHeader() {
+    // get rows 
+    var row = element.all(by.className("mat-header-row")).first();    
+    // get cell values
+    var cells = row.all(by.className("mat-header-cell"));
+    return cells.get(0).getText() as Promise<string>;
+  }    
+
 }
