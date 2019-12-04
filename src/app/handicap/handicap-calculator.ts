@@ -15,7 +15,11 @@ export class HandicapCalculator {
         // Adjusted Gross Score
         scores.sort; 
         scores.slice(0,numberToAverage) 
-        const sum = scores.reduce((previous, current) => current += previous);
+        let sum;
+        for(let score in scores) {
+            sum = sum + score;
+        }
+        // const sum = scores.reduce((previous, current) => current += previous);
         const adjustedGrossScore = sum/(scores.length) * adjusementRatio
 
         // handicap calculation

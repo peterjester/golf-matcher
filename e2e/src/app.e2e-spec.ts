@@ -495,22 +495,22 @@ describe('workspace-project App', () => {
     });
   });
 
-  //Handicap
-  // it('handicap table should have multiple rows',() => {
-  //   page.navigateToLocation('/handicaps');
-  //   page.getHandicapHeaderRows().then(function(count){
-  //     expect(count >= 2);
-  //   })
-  // });
+  // Handicap
+  it('handicap table should have multiple rows',() => {
+    page.navigateToLocation('/handicaps');
+    page.getHandicapHeaderRows().then(function(count){
+      expect(count >= 2);
+    })
+  });
 
-  // it('handicap header(0) is name',() => {
-  //   page.navigateToLocation('/handicaps');
-  //   browser.waitForAngular().then( function() {
-  //     page.getHandicapFirstHeader().then(function(header) {
-  //       expect("Name" == header);
-  //     });
-  //   });
-  // });
+  it('handicap header(0) is name',() => {
+    page.navigateToLocation('/handicaps');
+    browser.waitForAngular().then( function() {
+      page.getHandicapFirstHeader().then(function(header) {
+        expect("Name" == header);
+      });
+    });
+  });
 
   afterEach(async () => {
       // Assert that there are no errors emitted from the browser
