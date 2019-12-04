@@ -294,4 +294,12 @@ export class AppPage {
     return cells.get(0).getText() as Promise<string>;
   }    
 
+  getHandicapSecondHeader() {
+    // get rows 
+    var row = element.all(by.className("mat-header-row")).first();    
+    // get cell values
+    var cells = row.all(by.className("mat-header-cell"));
+    return cells.get(1).getText() as Promise<string>;
+  }    
+
 }
