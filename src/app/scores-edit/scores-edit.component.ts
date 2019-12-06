@@ -52,6 +52,7 @@ export class ScoresEditComponent implements OnInit {
     console.log("scoresEditComponent submit pressed");
     console.log("scoresEditComponent this.id: "+this.id);
     console.log("scoresEditComponent this.name: "+this.name);
+    console.log("scoresEditComponent this.scores: " + this.scores);
       this.playerService.updatePlayer( {
       id: this.id,
       name: this.name, 
@@ -61,7 +62,7 @@ export class ScoresEditComponent implements OnInit {
       age:  this.age,
       handicap: this.handicap,
       league: this.league,
-      scores: this.scores
+      scores: this.scores.toString().split(',').map((item)=> { return parseInt(item) })
     });
     this.router.navigateByUrl("players");
   }
