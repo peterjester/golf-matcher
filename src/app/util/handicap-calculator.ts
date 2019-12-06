@@ -23,7 +23,8 @@ export class HandicapCalculator {
         const adjustedGrossScore = sum/(scores.length) * adjusementRatio
 
         // handicap calculation
-        const handciap = (adjustedGrossScore - courseRating) * slopeRating;
+        const handciap = Math.floor((adjustedGrossScore - courseRating) * slopeRating);
+
 
         return handciap; 
     }
