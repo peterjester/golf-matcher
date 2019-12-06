@@ -41,6 +41,7 @@ export class ScoresEditComponent implements OnInit {
       this.scores = params["scores"];
       console.log("scoresEditComponent this.id: "+this.id);
       console.log("scoresEditComponent this.name: "+this.name);
+      console.log(`scores at position 0: ${this.scores[0]} : 1: ${this.scores[1]} : 2: ${this.scores[2]} :`)
       console.log("scoresEditComponent this.scores.length: "+this.scores.length);
     });
   }
@@ -52,6 +53,7 @@ export class ScoresEditComponent implements OnInit {
     console.log("scoresEditComponent submit pressed");
     console.log("scoresEditComponent this.id: "+this.id);
     console.log("scoresEditComponent this.name: "+this.name);
+    console.log("scoresEditComponent this.scores: " + this.scores);
       this.playerService.updatePlayer( {
       id: this.id,
       name: this.name, 
@@ -61,7 +63,7 @@ export class ScoresEditComponent implements OnInit {
       age:  this.age,
       handicap: this.handicap,
       league: this.league,
-      scores: this.scores
+      scores: this.scores.toString().split(',').map((item)=> { return parseInt(item) })
     });
     this.router.navigateByUrl("players");
   }
