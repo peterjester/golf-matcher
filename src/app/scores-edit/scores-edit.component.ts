@@ -41,7 +41,6 @@ export class ScoresEditComponent implements OnInit {
       this.scores = params["scores"];
       console.log("scoresEditComponent this.id: "+this.id);
       console.log("scoresEditComponent this.name: "+this.name);
-      console.log(`scores at position 0: ${this.scores[0]} : 1: ${this.scores[1]} : 2: ${this.scores[2]} :`)
       console.log("scoresEditComponent this.scores.length: "+this.scores.length);
     });
   }
