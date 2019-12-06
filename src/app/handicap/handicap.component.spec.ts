@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { of } from 'rxjs';
 
@@ -25,7 +25,6 @@ const angularFirestoreStub = {
 }
 describe('HandicapComponent', () => {
   let component: HandicapComponent;
-  let fixture: ComponentFixture<HandicapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -39,13 +38,4 @@ describe('HandicapComponent', () => {
     .compileComponents();
   }));
 
-  // beforeEach(() => {
-  //   fixture = TestBed.createComponent(HandicapComponent);
-  //   component = fixture.componentInstance;
-  //   fixture.detectChanges();
-  // });
-
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
 });

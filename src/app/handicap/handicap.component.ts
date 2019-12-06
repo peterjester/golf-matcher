@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../player.service';
 import { Player } from '../players/player';
-import { HandicapCalculator } from './handicap-calculator';
+import { HandicapCalculator } from '../util/handicap-calculator';
 
 @Component({
   selector: 'app-handicap',
