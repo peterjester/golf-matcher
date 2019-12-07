@@ -512,6 +512,15 @@ describe('workspace-project App', () => {
     });
   });
 
+  it('handicap header(1) is handicap',() => {
+    page.navigateToLocation('/handicaps');
+    browser.waitForAngular().then( function() {
+      page.getHandicapSecondHeader().then(function(header) {
+        expect("Handicap" == header);
+      });
+    });
+  });
+
   afterEach(async () => {
       // Assert that there are no errors emitted from the browser
       const logs = await browser.manage().logs().get(logging.Type.BROWSER);

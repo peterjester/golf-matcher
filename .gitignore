@@ -3,3 +3,7 @@ package-lock.json
 dist/
 .firebase
 coverage
+htmlReport.html
+reports/
+screenshots/
+target/
