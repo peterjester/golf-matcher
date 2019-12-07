@@ -29,10 +29,6 @@ export class TeamEditComponent implements OnInit {
                       private teamService : TeamService,
                       private playerService: PlayerService) {
     this.route.queryParams.subscribe(params => {
-      console.log("TeamEditComponent params[id]:"+params["id"]);
-      console.log("TeamEditComponent params[name]: "+params["name"]);
-      console.log("TeamEditComponent params[record]: "+params["record"]);
-      console.log("TeamEditComponent params[league]: "+params["league"]);
       this.id = params["id"];
       this.name = params["name"];
       this.record = params["record"];
@@ -52,18 +48,12 @@ export class TeamEditComponent implements OnInit {
   }
   
   onSubmit() {
-    console.log("TeamEditComponent onSubmit id: "+this.id);
-    console.log("TeamEditComponent onSubmit name: "+this.name);
-    console.log("TeamEditComponent onSubmit record: "+this.record);
-    console.log("TeamEditComponent onSubmit league: "+this.league);
-    console.log(this.players);
     this.teamService.updateTeam( {
                     id: this.id,
                     name: this.name, 
                     record: this.record,
                     league: this.league,
                     players: this.players});
-      
     this.router.navigateByUrl('/teams');
   }
 }
