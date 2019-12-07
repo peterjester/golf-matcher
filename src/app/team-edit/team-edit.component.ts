@@ -4,6 +4,8 @@ import {Team} from '../teams/team';
 import { Player } from '../players/player';
 import { ActivatedRoute } from '@angular/router';
 import {Router, NavigationExtras} from "@angular/router";
+import { PlayerService } from '../player.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-team-edit',
@@ -18,10 +20,14 @@ export class TeamEditComponent implements OnInit {
   public record: string;
   public league: string;
   public players: Player[];
+  public availablePlayers: Player[];
+  playersFormControl = new FormControl();
+
 
   public constructor(private route: ActivatedRoute,
                       private router: Router,
-                      private teamService : TeamService) {
+                      private teamService : TeamService,
+                      private playerService: PlayerService) {
     this.route.queryParams.subscribe(params => {
       console.log("TeamEditComponent params[id]:"+params["id"]);
       console.log("TeamEditComponent params[name]: "+params["name"]);
@@ -34,6 +40,13 @@ export class TeamEditComponent implements OnInit {
       this.players = [null];
       console.log("TeamEditComponent this.id: "+this.id);
       console.log("TeamEditComponent this.name: "+this.name);
+      this.loadPlayers();
+    });
+  }
+
+  loadPlayers() {
+    this.playerService.getPlayers().subscribe( (players : Player[]) => {
+      this.availablePlayers = players;
     });
   }
 

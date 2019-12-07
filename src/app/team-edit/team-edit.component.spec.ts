@@ -6,6 +6,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { of } from 'rxjs';
+import { MatMenuModule } from '@angular/material/menu';
 
 const data = of(
   [
