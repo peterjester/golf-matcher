@@ -37,11 +37,9 @@ export class TeamEditComponent implements OnInit {
       this.name = params["name"];
       this.record = params["record"];
       this.league = params["league"];
-      this.players = [null];
-      console.log("TeamEditComponent this.id: "+this.id);
-      console.log("TeamEditComponent this.name: "+this.name);
-      this.loadPlayers();
+      this.players = params["players"] as Player[];
     });
+    this.loadPlayers();
   }
 
   loadPlayers() {
@@ -58,6 +56,7 @@ export class TeamEditComponent implements OnInit {
     console.log("TeamEditComponent onSubmit name: "+this.name);
     console.log("TeamEditComponent onSubmit record: "+this.record);
     console.log("TeamEditComponent onSubmit league: "+this.league);
+    console.log(this.players);
     this.teamService.updateTeam( {
                     id: this.id,
                     name: this.name, 
