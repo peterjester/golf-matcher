@@ -15,6 +15,7 @@ import { Router, NavigationExtras } from "@angular/router";
 export class MatchComponent implements OnInit {
 
   public id: string;
+  public name: string;
   public record: string;
   public league: string;
   public team1Players: Player[];
@@ -36,12 +37,14 @@ export class MatchComponent implements OnInit {
       console.log("MatchComponent params[league]: " + params["league"]);
       this.team = JSON.parse(params["team"]) as Team
       this.id = params["id"];
+      this.name = params["name"];
       this.record = params["record"];
       this.league = params["league"];
       this.players = [null];
       this.team1Players = [];
       this.team2Players = [];
       console.log("MatchComponent this.id: " + this.id);
+      console.log("MatchComponent this.name: " + this.name);
     });
   }
 

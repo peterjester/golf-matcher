@@ -3,12 +3,12 @@
     <h2 class="header">Match Play</h2>
     <div class="grid-item"> 
         <label>Name:
-            <input [(ngModel)]=team.name placeholder="name"/>
+            <input *ngIf="team" [(ngModel)]=team.name placeholder="name"/>
         </label>
     </div>
     <div class="grid-item">
         <label>Record:
-            <input [(ngModel)]="team.record" placeholder="record"/>
+            <input *ngIf="team" [(ngModel)]="team.record" placeholder="record"/>
         </label>
 		</div>
 		<div class="grid-item">
