@@ -15,11 +15,16 @@ export class HandicapCalculator {
         // Adjusted Gross Score
         scores.sort; 
         scores.slice(0,numberToAverage) 
-        const sum = scores.reduce((previous, current) => current += previous);
+        var sum = 0;
+        for(let score of scores) {
+            sum = sum + score;
+        }
+        // const sum = scores.reduce((previous, current) => current += previous);
         const adjustedGrossScore = sum/(scores.length) * adjusementRatio
 
         // handicap calculation
-        const handciap = (adjustedGrossScore - courseRating) * slopeRating;
+        const handciap = Math.floor((adjustedGrossScore - courseRating) * slopeRating);
+
 
         return handciap; 
     }

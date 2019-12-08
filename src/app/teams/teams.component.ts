@@ -44,7 +44,9 @@ export class TeamsComponent implements OnInit {
 
   getTeams(): void {
     this.teamService.getTeams()
-        .subscribe(teams => this.teams = teams);
+        .subscribe((teams) => {
+          this.teams = teams
+        });
   }  
 
   onSelect(team: Team): void {
@@ -67,13 +69,7 @@ export class TeamsComponent implements OnInit {
   onEdit() {
     console.log("teams onEdit");
     let navigationExtras: NavigationExtras = {
-      queryParams: {
-          "id": this.selectedTeam.id,
-          "name": this.selectedTeam.name,
-          "record": this.selectedTeam.record,
-          "league": this.selectedTeam.league,
-          "players": this.selectedTeam.players
-      }
+      queryParams: this.selectedTeam
     };
     this.router.navigate(["editteam"], navigationExtras);
   }

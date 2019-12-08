@@ -39,9 +39,6 @@ export class PlayerEditComponent implements OnInit {
       this.handicap = params["handicap"];
       this.league = params["league"];
       this.scores = params["scores"];
-      console.log("PlayerEditComponent this.id: "+this.id);
-      console.log("PlayerEditComponent this.name: "+this.name);
-      console.log("PlayerEditComponent this.scores.length: "+this.scores.length);
     });
   }
 
