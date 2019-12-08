@@ -78,6 +78,16 @@ export class TeamsComponent implements OnInit {
     this.router.navigate(["editteam"], navigationExtras);
   }
 
+  onMatch() {
+    console.log("match");
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+          "team": JSON.stringify(this.selectedTeam)
+      }
+    };
+    this.router.navigate(["match"], navigationExtras);
+  }
+
   onFind() {
     console.log("teams onFind findTeam="+this.findTeam);
     this.teamNotFound = false;

@@ -31,6 +31,8 @@ import { HandicapComponent } from './handicap/handicap.component';
 
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { PointsComponent } from './points/points.component';
+import { MatchComponent } from './match/match.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
     TeamEditComponent,
     LeaderboardComponent,
     HandicapComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    PointsComponent,
+    MatchComponent
   ],
   imports: [
     FormsModule,

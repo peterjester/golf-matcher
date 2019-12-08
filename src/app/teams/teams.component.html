@@ -1,37 +1,39 @@
 <br>
 <!-- <div style="background:url('./assets/golf-image.jpg') no-repeat 0px 0px;"> -->
 <div>
-<h2 class="header">Teams</h2>
-<ul class="teams">
-        <div class="grid-container">
-                <cdk-virtual-scroll-viewport  style="height: 260px" itemSize="30" >
-                        <ng-container *cdkVirtualFor="let team of teams">
-                <li 
-                (click)="onSelect(team)" 
-                [class.selected]="team === selectedTeam">      
-                <span class="badge">{{team.id}}</span> {{team.name}} <span>({{team.league}})</span>
-                </li>
-                </ng-container>
-                </cdk-virtual-scroll-viewport>
-        </div>
-        <div class="addbutton">
-                <button (click)="onAdd()">Add Team</button>
-        </div>
-        <div class="editbutton">
-                <button (click)="onEdit()" [disabled]="!selectedTeam" class="editTeamButton">Edit Team</button>
-        </div>
-        <div class="deletebutton">
-                        <button type="submit" (click)="onDelete()" [disabled]="!selectedTeam" class="deleteTeamButton">Delete Team</button>
-        </div>
-        <div class="findByName">
-                <label class="findByNameLabel">Find By Name:
-                <input [(ngModel)]="findTeam" (focus)="findByNameFocus()" type="text" id="findByName">
-                </label>
-                <div *ngIf="teamNotFound" class="alert alert-danger">
-                        Team not found
-                </div>
-                <button class="findButton" type="submit" (click)="onFind()">Find</button>
-        </div>
-</ul>
+	<h2 class="header">Teams</h2>
+	<ul class="teams">
+		<div class="grid-container">
+			<cdk-virtual-scroll-viewport style="height: 260px" itemSize="30">
+				<ng-container *cdkVirtualFor="let team of teams">
+					<li (click)="onSelect(team)" [class.selected]="team === selectedTeam">
+						<span class="badge">{{team.id}}</span> {{team.name}}
+						<span>({{team.league}})</span>
+					</li>
+				</ng-container>
+			</cdk-virtual-scroll-viewport>
+		</div>
+		<div class="addbutton">
+			<button (click)="onAdd()">Add Team</button>
+		</div>
+		<div class="editbutton">
+			<button (click)="onEdit()" [disabled]="!selectedTeam" class="editTeamButton">Edit Team</button>
+		</div>
+		<div class="deletebutton">
+			<button type="submit" (click)="onDelete()" [disabled]="!selectedTeam" class="deleteTeamButton">Delete
+				Team</button>
+		</div>
+		<div class="matchbutton">
+			<button type="submit" (click)="onMatch()" [disabled]="!selectedTeam" class="matchbutton">Match Team</button>
+		</div>
+		<div class="findByName">
+			<label class="findByNameLabel">Find By Name:
+				<input [(ngModel)]="findTeam" (focus)="findByNameFocus()" type="text" id="findByName">
+			</label>
+			<div *ngIf="teamNotFound" class="alert alert-danger">
+				Team not found
+			</div>
+			<button class="findButton" type="submit" (click)="onFind()">Find</button>
+		</div>
+	</ul>
 </div>
-

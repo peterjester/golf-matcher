@@ -1,0 +1,26 @@
+<div class="grid-container">
+    <br>
+    <h2 class="header">Match Play</h2>
+    <div class="grid-item"> 
+        <label>Name:
+            <input [(ngModel)]=team.name placeholder="name"/>
+        </label>
+    </div>
+    <div class="grid-item">
+        <label>Record:
+            <input [(ngModel)]="team.record" placeholder="record"/>
+        </label>
+		</div>
+		<div class="grid-item">
+			<label>Match Vs:
+				</label>
+				<select [(ngModel)]="selectedTeam">
+					<option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+				</select> 
+
+		</div>
+    <div class="buttonWrapper">
+				<!-- <button type="submit" (click)="onSubmit()" class="submitButton">Submit</button> -->
+				<button type="calculate" (click)="onCalculate()" class="calculateButton">Calculate</button>
+    </div>
+</div>
