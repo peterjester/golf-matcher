@@ -15,7 +15,6 @@ import { Router, NavigationExtras } from "@angular/router";
 export class MatchComponent implements OnInit {
 
   public id: string;
-  public name: string;
   public record: string;
   public league: string;
   public team1Players: Player[];
@@ -37,14 +36,12 @@ export class MatchComponent implements OnInit {
       console.log("MatchComponent params[league]: " + params["league"]);
       this.team = JSON.parse(params["team"]) as Team
       this.id = params["id"];
-      this.name = params["name"];
       this.record = params["record"];
       this.league = params["league"];
       this.players = [null];
       this.team1Players = [];
       this.team2Players = [];
       console.log("MatchComponent this.id: " + this.id);
-      console.log("MatchComponent this.name: " + this.name);
     });
   }
 
@@ -63,6 +60,7 @@ export class MatchComponent implements OnInit {
     console.log(this.selectedTeam)
     console.log(this.team) //
     console.log(this.team.players) // this is the array of string of users.
+    if(confirm(`Are you sure you want to match ${this.team.name} VS. ${this.selectedTeam.name}`)) {
     this.playerService.getPlayers()
       .subscribe(playerData => {
         this.playerData = playerData
@@ -81,7 +79,7 @@ export class MatchComponent implements OnInit {
           const selectedPlayer = this.selectedTeam.players[i]
           console.log(this.selectedTeam.players)
           console.log(this.playerData)
-          let playerName1 = JSON.stringify(this.selectedTeam.players[i].name).replace(/\"/g, '')
+          let playerName1 = JSON.stringify(this.selectedTeam.players[i]).replace(/\"/g, '')
           for (let j = 0; j < this.playerData.length; j++) {
             let playerName3 = this.playerData[j].name
             if (playerName1 === playerName3) {
@@ -173,7 +171,7 @@ export class MatchComponent implements OnInit {
             league: this.selectedTeam.league,
             players: this.selectedTeam.players});
       })
-
+    }
 
   }
 }

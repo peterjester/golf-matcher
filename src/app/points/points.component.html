@@ -9,7 +9,7 @@
   
     <tr *ngFor="let team of teams" class="mat-row">
       <td class="mat-cell" :last-child>{{team.name}}</td>
-      <td class="mat-cell" :last-child><div *ngFor="let player of team.players">{{player.name}}</div></td>
+      <td class="mat-cell" :last-child><div *ngFor="let player of team.players">{{player}}</div></td>
       <td class="mat-cell" :last-child>{{team.record}}</td>
     </tr>
   </table>
