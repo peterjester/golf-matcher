@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbAuthFirebaseUIModule } from '@firebaseui/ng-bootstrap';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { NgxAuthFirebaseUIModule, AuthProcessService } from 'ngx-auth-firebaseui';
 
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
@@ -8,17 +8,22 @@ import { AuthService } from '../auth.service';
   selector: 'app-authentication',
   templateUrl: './authentication.component.html',
   styleUrls: ['./authentication.component.css'],
-  providers: [NgbAuthFirebaseUIModule]
+  providers: [NgxAuthFirebaseUIModule]
 })
-export class AuthenticationComponent implements OnInit {
+export class AuthenticationComponent implements OnInit, AfterViewInit {
 
-  constructor(private router: Router, private authService: AuthService) { }
+  ngAfterViewInit(): void {
+    if(this.authProcessService.user){
+      this.router.navigateByUrl('/dashboard');
+    }  }
+
+  constructor(private router: Router, 
+    private authService: AuthService,
+    private authProcessService: AuthProcessService) { }
 
   ngOnInit() {
     this.authService = new AuthService();
-    if(this.authService.isAuthenticated){
-      this.router.navigateByUrl('/dashboard');
-    }
+
   }
 
   loginSuccess(event) {

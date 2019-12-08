@@ -13,6 +13,7 @@ export class AuthService {
   }
 
   async loginSuccess(event) {
+    console.log("login success");
     let userData =  event.providerData[0];
     this.currentUser = userData;
   }
@@ -22,6 +23,7 @@ export class AuthService {
   }
 
   isAuthenticated():boolean {
+      console.log(!!this.currentUser);
       return !!this.currentUser;
   }
 }

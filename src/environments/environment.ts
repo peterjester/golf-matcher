@@ -11,7 +11,9 @@ export const environment = {
     projectId: "golf-matcher-cf449",
     storageBucket: "golf-matcher-cf449.appspot.com",
     messagingSenderId: "935607959094",
-    appId: "1:935607959094:web:d1d9ecda2c6d4e7489e297"
+    appId: "1:935607959094:web:d1d9ecda2c6d4e7489e297",
+    authGuardFallbackURL: 'dashboard',
+    authGuardLoggedInURL: 'dashboard',
   }
 };
 
