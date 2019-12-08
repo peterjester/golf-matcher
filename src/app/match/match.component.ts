@@ -158,7 +158,7 @@ export class MatchComponent implements OnInit {
         console.log(team1Points)
         console.log(team2Points)
         team1Points = team1Points + parseInt(this.team.record)
-        team2Points = team1Points + parseInt(this.selectedTeam.record)
+        team2Points = team2Points + parseInt(this.selectedTeam.record)
         // let's update selectedTeam and team. team1 = team. team2 = selectedTeam
         this.teamService.updateTeam( {
           id: this.team.id,
