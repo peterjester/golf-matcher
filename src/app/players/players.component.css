@@ -99,20 +99,11 @@ button[disabled]{
   width: 100px;
   float: left;
 }
-.addscorebutton {
-  width: 100px;
-  float: bottom;
-}
 
 .editscorebutton {
   width: 100px;
   float: left;
   background-color: rgb(92, 50, 100);
-}
-
-.deletescorebutton {
-  width: 100px;
-  float: left;
 }
 
 .findByName {

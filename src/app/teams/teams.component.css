@@ -103,21 +103,23 @@
   }
 
   .addbutton {
-    width: 50px;
+    width: 100px;
     float: left;
-    margin: 25px;
   }
   
   .editbutton {
-    width: 50px;
+    width: 100px;
     float: left;
-    margin: 25px;
   }
   
   .deletebutton {
-    width: 50px;
+    width: 100px;
     float: left;
-    margin: 25px;
+  }
+  .matchbutton {
+    width: 100px;
+    float: left;
+    background-color: rgb(92, 50, 100);
   }
   .findByName {
     float: left;

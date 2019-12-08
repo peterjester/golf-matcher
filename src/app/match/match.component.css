@@ -49,7 +49,7 @@ input[type=submit] {
 
 button {
     /* background: #0066A2;    */
-    background: rgb(13,85,7); 
+    background: rgb(92, 50, 100);
     padding: 5px 15px;  
     color: white;
     border-style: outset;
@@ -102,7 +102,7 @@ button[disabled]{
 .grid-container {
     display: grid;
     grid-template-columns: auto;
-    background-color: rgb(13,85,7);
+    background-color: rgb(92, 50, 100);
     padding: 10px;
   }
   .grid-item {
