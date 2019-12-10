@@ -4,6 +4,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
+## Documentation & Other Links
+
+[Architecture Overview](https://github.com/peterjester/golf-matcher/blob/master/docs/Architecture%20Overview.pdf)
+
+[Deployment Package](https://github.com/peterjester/golf-matcher/blob/master/docs/Deployment%20Package.pdf)
+
+[SRS](https://github.com/peterjester/golf-matcher/blob/master/docs/SRS.docx.pdf)
+
+[Testing Report](https://github.com/peterjester/golf-matcher/blob/master/docs/Testing%20Report.pdf)
+
+[User Manual](https://github.com/peterjester/golf-matcher/blob/master/docs/User%20Manual.pdf)
+
+
+[Trello](https://trello.com/b/yGfjGkj2/golf-matcher)
+
+### Deployed App
+
+https://golf-matcher-cf449.firebaseapp.com/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
