@@ -38,7 +38,7 @@
     "fs-extra": "^8.1.0",
     "geckodriver": "^1.19.1",
     "jasmine-reporters": "^2.3.2",
-    "jszip": "^3.2.2",
+    "jszip": "^3.7.0",
     "ng-sidebar": "^9.1.1",
     "ngx-auth-firebaseui": "^3.4.2",
     "protractor-html-reporter-2": "^1.0.4",
