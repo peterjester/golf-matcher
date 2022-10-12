@@ -37,7 +37,7 @@
     "font-awesome": "^4.7.0",
     "fs-extra": "^8.1.0",
     "geckodriver": "^1.19.1",
-    "jasmine-reporters": "^2.3.2",
+    "jasmine-reporters": "^2.5.0",
     "jszip": "^3.2.2",
     "ng-sidebar": "^9.1.1",
     "ngx-auth-firebaseui": "^3.4.2",
